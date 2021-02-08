@@ -1,0 +1,45 @@
+﻿<Window x:Class="WpfApp2.AddVoditel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="AddVoditel" Height="450" Width="800">
+    <Grid>
+        <Grid HorizontalAlignment="Left" Height="76" Margin="-1,1,0,0" VerticalAlignment="Top" Width="792" Background="#FFE0A9AF">
+            <Label Content="Добавить водителя" HorizontalAlignment="Left" Margin="215,7,0,0" VerticalAlignment="Top" Height="57" Width="389" FontSize="36"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="340" Margin="0,79,0,0" VerticalAlignment="Top" Width="792" Background="#FFB5D5CA">
+            <TextBox x:Name="TextBoxId" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="186,6,0,0"/>
+            <Label Content="Фамилия*" HorizontalAlignment="Left" Margin="15,49,0,0" VerticalAlignment="Top"/>
+            <Label Content="Имя*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,84,0,0"/>
+            <Label Content="Отчество*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="14,115,0,0"/>
+            <Label Content="Паспорт(серия и номер)*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12,148,0,0"/>
+            <Label Content="Адрес регистрации*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="437,5,0,0"/>
+            <Label Content="Адрес проживания*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="436,33,0,0"/>
+            <Label Content="Место работы" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="436,58,0,0"/>
+            <Label Content="Должность" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="436,86,0,0"/>
+            <Label Content="Мобильный телефон*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="435,112,0,0"/>
+            <Label Content="Email*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="436,136,0,0"/>
+            <Label Content="Фотография*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="442,157,0,0"/>
+            <Label Content="Замечания" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="597,157,0,0"/>
+            <TextBox x:Name="TextBoxSurname" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="186,48,0,0"/>
+            <TextBox x:Name="TextBoxName"  HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="185,82,0,0"/>
+            <TextBox x:Name="TextBoxMiddleName" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="186,116,0,0"/>
+            <TextBox x:Name="TextBoxPasport" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="187,151,0,0"/>
+            <TextBox x:Name="TextBoxAdressReg"  HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="594,3,0,0"/>
+            <TextBox x:Name="TextBoxAdress"  HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="595,32,0,0"/>
+            <TextBox x:Name="TextBoxWork" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="596,59,0,0"/>
+            <TextBox x:Name="TextBoxDolgnost" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="596,86,0,0"/>
+            <TextBox x:Name="TextBoxPhone"  HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="598,113,0,0"/>
+            <TextBox x:Name="TextBoxEmail" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="598,140,0,0"/>
+            <TextBox x:Name="TextBoxNote" HorizontalAlignment="Left" Height="145" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="191" Margin="596,187,0,0"/>
+            <Button x:Name="ButtonOk" Content="Добавить" HorizontalAlignment="Left" Margin="290,297,0,0" VerticalAlignment="Top" Width="118" Height="36"/>
+            <Image HorizontalAlignment="Left" Height="138" Margin="444,188,0,0" VerticalAlignment="Top" Width="134"/>
+        </Grid>
+        <Image Margin="4,4,714,344" Source="gibdd_logo (2).png" Stretch="Fill"/>
+        <Label Content="ID*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,86,0,0"/>
+
+    </Grid>
+</Window>

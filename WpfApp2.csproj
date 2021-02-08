@@ -35,8 +35,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,6 +64,30 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddVoditel.xaml.cs">
+      <DependentUpon>AddVoditel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CodeSetSet.cs">
+      <DependentUpon>GBDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Drivers.cs">
+      <DependentUpon>GBDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GBDD.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GBDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SubjectsSetSet.cs">
+      <DependentUpon>GBDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Voditeli.xaml.cs">
+      <DependentUpon>Voditeli.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AddVoditel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -63,10 +96,24 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GBDD.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GBDD.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GBDD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GBDD.edmx</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Voditeli.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -86,6 +133,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="GBDD.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>GBDD.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="GBDD.edmx.diagram">
+      <DependentUpon>GBDD.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -96,6 +151,23 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="gibdd_logo %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GBDD.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GBDD.Context.cs</LastGenOutput>
+      <DependentUpon>GBDD.edmx</DependentUpon>
+    </Content>
+    <Content Include="GBDD.edmx.sql" />
+    <Content Include="GBDD.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GBDD.cs</LastGenOutput>
+      <DependentUpon>GBDD.edmx</DependentUpon>
+    </Content>
+    <Resource Include="gibdd_logo %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

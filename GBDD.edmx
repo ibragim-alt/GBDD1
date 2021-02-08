@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="GBDD.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CodeSetSet">
+          <Key>
+            <PropertyRef Name="IdCode" />
+          </Key>
+          <Property Name="IdCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdSubject" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Drivers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="lastname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="middlename" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="passportSerial" Type="int" Nullable="false" />
+          <Property Name="passportNumber" Type="int" Nullable="false" />
+          <Property Name="postCode" Type="int" Nullable="false" />
+          <Property Name="address" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="addressLife" Type="nvarchar" MaxLength="50" />
+          <Property Name="company" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="jobname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="photo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="descreption" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="SubjectsSetSet">
+          <Key>
+            <PropertyRef Name="IdSubject" />
+          </Key>
+          <Property Name="IdSubject" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RegionNameRU" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="RegionNameEN" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ISO" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="GBDDStoreContainer">
+          <EntitySet Name="CodeSetSet" EntityType="Self.CodeSetSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Drivers" EntityType="Self.Drivers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SubjectsSetSet" EntityType="Self.SubjectsSetSet" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="GBDD" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="GBDDContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CodeSetSet1" EntityType="GBDD.CodeSetSet" />
+          <EntitySet Name="SubjectsSetSet1" EntityType="GBDD.SubjectsSetSet" />
+          <EntitySet Name="Drivers" EntityType="GBDD.Drivers" />
+          <AssociationSet Name="SubjectsSetSetCodeSetSet" Association="GBDD.SubjectsSetSetCodeSetSet">
+            <End Role="SubjectsSetSet" EntitySet="SubjectsSetSet1" />
+            <End Role="CodeSetSet" EntitySet="CodeSetSet1" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CodeSetSet">
+          <Key>
+            <PropertyRef Name="IdCode" />
+          </Key>
+          <Property Name="IdCode" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdSubject" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SubjectsSetSet" Relationship="GBDD.SubjectsSetSetCodeSetSet" FromRole="CodeSetSet" ToRole="SubjectsSetSet" />
+        </EntityType>
+        <EntityType Name="SubjectsSetSet">
+          <Key>
+            <PropertyRef Name="IdSubject" />
+          </Key>
+          <Property Name="IdSubject" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RegionNameRU" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RegionNameEN" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ISO" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CodeSetSet" Relationship="GBDD.SubjectsSetSetCodeSetSet" FromRole="SubjectsSetSet" ToRole="CodeSetSet" />
+        </EntityType>
+        <EntityType Name="Drivers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="lastname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="middlename" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="passportSerial" Type="Int32" Nullable="false" />
+          <Property Name="passportNumber" Type="Int32" Nullable="false" />
+          <Property Name="postCode" Type="Int32" Nullable="false" />
+          <Property Name="address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="addressLife" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="company" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="jobname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="photo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="descreption" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <Association Name="SubjectsSetSetCodeSetSet">
+          <End Type="GBDD.SubjectsSetSet" Role="SubjectsSetSet" Multiplicity="1" />
+          <End Type="GBDD.CodeSetSet" Role="CodeSetSet" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GBDDStoreContainer" CdmEntityContainer="GBDDContainer">
+          <EntitySetMapping Name="CodeSetSet1">
+            <EntityTypeMapping TypeName="GBDD.CodeSetSet">
+              <MappingFragment StoreEntitySet="CodeSetSet">
+                <ScalarProperty Name="IdSubject" ColumnName="IdSubject" />
+                <ScalarProperty Name="IdCode" ColumnName="IdCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubjectsSetSet1">
+            <EntityTypeMapping TypeName="GBDD.SubjectsSetSet">
+              <MappingFragment StoreEntitySet="SubjectsSetSet">
+                <ScalarProperty Name="ISO" ColumnName="ISO" />
+                <ScalarProperty Name="RegionNameEN" ColumnName="RegionNameEN" />
+                <ScalarProperty Name="RegionNameRU" ColumnName="RegionNameRU" />
+                <ScalarProperty Name="IdSubject" ColumnName="IdSubject" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Drivers">
+            <EntityTypeMapping TypeName="GBDD.Drivers">
+              <MappingFragment StoreEntitySet="Drivers">
+                <ScalarProperty Name="descreption" ColumnName="descreption" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="jobname" ColumnName="jobname" />
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="addressLife" ColumnName="addressLife" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="postCode" ColumnName="postCode" />
+                <ScalarProperty Name="passportNumber" ColumnName="passportNumber" />
+                <ScalarProperty Name="passportSerial" ColumnName="passportSerial" />
+                <ScalarProperty Name="middlename" ColumnName="middlename" />
+                <ScalarProperty Name="lastname" ColumnName="lastname" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

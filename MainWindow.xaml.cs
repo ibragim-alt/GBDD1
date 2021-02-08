@@ -20,6 +20,7 @@ namespace WpfApp2
     /// </summary>
     public partial class MainWindow : Window
     {
+        int k = 0;
         public MainWindow()
         {
             InitializeComponent();
@@ -27,29 +28,32 @@ namespace WpfApp2
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
-            int a = 0;
-            if (TextBoxLogin.Text == TextBoxPasword.Text && TextBoxLogin.Text.Length > 0)
+            if (TextBoxLogin.Text == "Inspector" && PasswordBoxPass.Password == "Inspector")
             {
-                MessageBox.Show("Пользователь авторизован");
+                MessageBox.Show("Успешный вход ");
             }
-
-            if (TextBoxLogin.Text != TextBoxPasword.Text)
+            else
             {
-                a = a + 1;
-                if (a > 3)
+                MessageBox.Show("Данные неверны");
+            }
+            {
+
+                k++;
+                if (k >= 3)
                 {
-                    MessageBox.Show("Попытки кончились");
+                    TextBoxLogin.IsEnabled = false;
+                    ButtonOk.IsEnabled = false;
+                    PasswordBoxPass.IsEnabled = false;
+                    MessageBox.Show("Все попытки входа закончены.");
+
+
+                }
+                if (TextBoxLogin.Text.Length == 0)
+                {
+                    MessageBox.Show("Заполните поле логин");
                 }
 
-            }
-
-            if (TextBoxLogin.Text.Length == 0)
-            {
-                MessageBox.Show("Логин отсутствует");
-            }
-            if (TextBoxPasword.Text.Length == 0)
-            {
-                MessageBox.Show("Пароль отсутствует");
+               
             }
 
 
