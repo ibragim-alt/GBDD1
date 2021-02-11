@@ -68,18 +68,28 @@
       <DependentUpon>AddVoditel.xaml</DependentUpon>
     </Compile>
     <Compile Include="CodeSetSet.cs">
-      <DependentUpon>GBDD.tt</DependentUpon>
+      <DependentUpon>GIBDD.tt</DependentUpon>
     </Compile>
     <Compile Include="Drivers.cs">
-      <DependentUpon>GBDD.tt</DependentUpon>
+      <DependentUpon>GIBDD.tt</DependentUpon>
     </Compile>
-    <Compile Include="GBDD.cs">
+    <Compile Include="GIBDD.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>GBDD.tt</DependentUpon>
+      <DependentUpon>GIBDD.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GIBDD.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GIBDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GIBDD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GIBDD.edmx</DependentUpon>
     </Compile>
     <Compile Include="SubjectsSetSet.cs">
-      <DependentUpon>GBDD.tt</DependentUpon>
+      <DependentUpon>GIBDD.tt</DependentUpon>
     </Compile>
     <Compile Include="Voditeli.xaml.cs">
       <DependentUpon>Voditeli.xaml</DependentUpon>
@@ -95,16 +105,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="GBDD.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GBDD.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="GBDD.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GBDD.edmx</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -133,12 +133,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="GBDD.edmx">
+    <EntityDeploy Include="GIBDD.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>GBDD.Designer.cs</LastGenOutput>
+      <LastGenOutput>GIBDD.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="GBDD.edmx.diagram">
-      <DependentUpon>GBDD.edmx</DependentUpon>
+    <None Include="GIBDD.edmx.diagram">
+      <DependentUpon>GIBDD.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -153,21 +153,22 @@
     <Resource Include="gibdd_logo %281%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="GBDD.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>GBDD.Context.cs</LastGenOutput>
-      <DependentUpon>GBDD.edmx</DependentUpon>
-    </Content>
-    <Content Include="GBDD.edmx.sql" />
-    <Content Include="GBDD.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>GBDD.cs</LastGenOutput>
-      <DependentUpon>GBDD.edmx</DependentUpon>
-    </Content>
     <Resource Include="gibdd_logo %282%29.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GIBDD.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GIBDD.Context.cs</LastGenOutput>
+      <DependentUpon>GIBDD.edmx</DependentUpon>
+    </Content>
+    <Content Include="GIBDD.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GIBDD.cs</LastGenOutput>
+      <DependentUpon>GIBDD.edmx</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

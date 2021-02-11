@@ -28,9 +28,12 @@ namespace WpfApp2
 
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
-            if (TextBoxLogin.Text == "Inspector" && PasswordBoxPass.Password == "Inspector")
+            if (TextBoxLogin.Text == "inspector" && PasswordBoxPass.Password == "inspector")
             {
                 MessageBox.Show("Успешный вход ");
+                Voditeli voditeli = new Voditeli();
+                voditeli.Show();
+                this.Close();
             }
             else
             {
@@ -55,6 +58,8 @@ namespace WpfApp2
 
                
             }
+            
+            
 
 
         }

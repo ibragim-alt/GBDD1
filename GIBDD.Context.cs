@@ -13,10 +13,10 @@ namespace WpfApp2
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class GBDDContainer : DbContext
+    public partial class GIBDDContainer : DbContext
     {
-        public GBDDContainer()
-            : base("name=GBDDContainer")
+        public GIBDDContainer()
+            : base("name=GIBDDContainer")
         {
         }
     
@@ -25,8 +25,8 @@ namespace WpfApp2
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<CodeSetSet> CodeSetSet1 { get; set; }
-        public virtual DbSet<SubjectsSetSet> SubjectsSetSet1 { get; set; }
+        public virtual DbSet<CodeSetSet> CodeSetSet { get; set; }
         public virtual DbSet<Drivers> Drivers { get; set; }
+        public virtual DbSet<SubjectsSetSet> SubjectsSetSet { get; set; }
     }
 }

@@ -15,7 +15,7 @@ namespace WpfApp2
     public partial class CodeSetSet
     {
         public int IdCode { get; set; }
-        public string IdSubject { get; set; }
+        public int IdSubject { get; set; }
     
         public virtual SubjectsSetSet SubjectsSetSet { get; set; }
     }

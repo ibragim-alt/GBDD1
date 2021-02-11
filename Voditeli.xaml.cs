@@ -24,11 +24,27 @@ namespace WpfApp2
         public Voditeli()
         {
             InitializeComponent();
-           
+            FillTable();
         }
 
+        private void FillTable()
+        {
+            drivers.Clear();
+            using (GIBDDContainer db = new GIBDDContainer())
+            {
+                foreach (Drivers u in db.Drivers)
 
-        
-        
+                {
+                    drivers.Add(u);
+                }
+
+                DataGridVod.ItemsSource = db.Drivers.Local.ToBindingList();
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
