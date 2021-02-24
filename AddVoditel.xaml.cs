@@ -23,5 +23,72 @@ namespace WpfApp2
         {
             InitializeComponent();
         }
+        string path;
+
+        private bool CheckEmail (string email)
+        {
+            if (email.IndexOf("@") > 0 && email.IndexOf(".") > 0)
+            {
+                if (email.Split('@')[1].Split('.').Length ==2)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private void ButtonOk_Click(object sender, RoutedEventArgs e)
+        {
+            if (TextBoxId.Text.Length != 0 )
+            {
+                if (TextBoxSurname.Text.Length != 0)
+                {
+                    if (TextBoxName.Text.Length != 0)
+                    {
+                        if (TextBoxMiddleName.Text.Length != 0)
+                        {
+                            if (TextBoxPasport.Text.Length != 0)
+                            {
+                                if (TextBoxAdressReg.Text.Length != 0 || TextBoxAdress.Text.Length !=0)
+                                {
+                                    if (TextBoxPhone.Text.Length !=0)
+                                    {
+                                        if (TextBoxEmail.Text.Length !=0 && CheckEmail(TextBoxEmail.Text) ==true)
+                                        {
+                                            if (path != null)
+                                            {
+                                                using (GIBDDContainer db = new GIBDDContainer())
+                                                {
+                                                    Drivers driver = new Drivers();
+                                                    driver.address = TextBoxAdress.Text;
+                                                    driver.addressLife = TextBoxAdressReg.Text;
+                                                    driver.company = TextBoxWork.Text;
+                                                    driver.descreption = TextBoxNote.Text;
+                                                    driver.email = TextBoxEmail.Text;
+                                                    driver.phone = TextBoxPhone.Text;
+                                                    driver.name = TextBoxName.Text;
+                                                    driver.lastname = TextBoxSurname.Text;
+                                                    driver.middlename = TextBoxMiddleName.Text;
+
+                                                    driver.photo = path.Substring(path.LastIndexOf("\\") + 1);
+
+                                                    driver.postCode = TextBoxDolgnost.Text;
+                                                    db.Drivers
+
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            
+                
+                                
+        }
     }
 }
