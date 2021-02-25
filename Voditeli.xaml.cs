@@ -44,6 +44,8 @@ namespace WpfApp2
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            AddVoditel addVoditel = new AddVoditel();
+            addVoditel.Show();
 
         }
     }
