@@ -1,0 +1,22 @@
+﻿<Window x:Class="WpfApp2.MakeVod"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="MakeVod" Height="450" Width="800">
+    <Grid>
+        <Label Content="ID" HorizontalAlignment="Left" Margin="40,42,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="113,47,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Имя" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="41,92,0,0"/>
+        <Label Content="Фамилия" HorizontalAlignment="Left" Margin="41,132,0,0" VerticalAlignment="Top"/>
+        <Label Content="Отчество" HorizontalAlignment="Left" Margin="41,178,0,0" VerticalAlignment="Top"/>
+        <Label Content="Паспорт" HorizontalAlignment="Left" Margin="43,219,0,0" VerticalAlignment="Top"/>
+        <Label Content="Адресс регистрации" HorizontalAlignment="Left" Margin="347,45,0,0" VerticalAlignment="Top"/>
+        <Label Content="Адресс проживания" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="346,85,0,0"/>
+        <Label Content="Место работы " HorizontalAlignment="Left" Margin="346,126,0,0" VerticalAlignment="Top"/>
+        <Label Content="Должность" HorizontalAlignment="Left" Margin="345,171,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

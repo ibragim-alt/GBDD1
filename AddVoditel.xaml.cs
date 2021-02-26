@@ -27,23 +27,11 @@ namespace WpfApp2
         {
             InitializeComponent();
         }
-        string path;
-        string path1;
-        string path2;
+        public string path;
+        
+        public string path2;
 
-        private void ButtonLoad_Click(object sender, RoutedEventArgs e)
-        {
-            var dialog = new OpenFileDialog();
-            dialog.Filter = "Image files (*.JPG, *.PNG) | *.jpg; *.png;";
-            if (dialog.ShowDialog() == true)
-            {
-                path = dialog.FileName;
-                ImagePhoto.Stretch = Stretch.Uniform;
-                ImagePhoto.Source = new BitmapImage(new Uri(path));
-            }
-            string path2 = Assembly.GetExecutingAssembly().Location.ToString();
-            File.Copy(path, path2.Substring(0, path2.LastIndexOf("\\")) + "\\photo\\" + path.Substring(path.LastIndexOf("\\") + 1), true);
-        }
+        
 
         private bool CheckEmail (string email)
         {
@@ -98,6 +86,9 @@ namespace WpfApp2
 
 
                                                 }
+                                                Voditeli NewGIBDD = new Voditeli();
+                                                NewGIBDD.Show();
+                                                this.Hide();
                                             }
                                         }
                                         else
@@ -142,6 +133,20 @@ namespace WpfApp2
             
                 
                                 
+        }
+
+        private void ButtonLoad_Click_1(object sender, RoutedEventArgs e)
+        {
+            var dialog = new OpenFileDialog();
+            dialog.Filter = "Image files (*.JPG, *.PNG) | *.jpg; *.png;";
+            if (dialog.ShowDialog() == true)
+            {
+                path = dialog.FileName;
+                ImagePhoto.Stretch = Stretch.Uniform;
+                ImagePhoto.Source = new BitmapImage(new Uri(path));
+            }
+            string path2 = Assembly.GetExecutingAssembly().Location.ToString();
+            File.Copy(path, path2.Substring(0, path2.LastIndexOf("\\")) + "\\photo\\" + path.Substring(path.LastIndexOf("\\") + 1), true);
         }
     }
 }
