@@ -28,5 +28,6 @@ namespace WpfApp2
         public virtual DbSet<CodeSetSet> CodeSetSet { get; set; }
         public virtual DbSet<Drivers> Drivers { get; set; }
         public virtual DbSet<SubjectsSetSet> SubjectsSetSet { get; set; }
+        public virtual DbSet<licence> licence { get; set; }
     }
 }

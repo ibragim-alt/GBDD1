@@ -67,6 +67,9 @@
     <Compile Include="AddVoditel.xaml.cs">
       <DependentUpon>AddVoditel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Carta.xaml.cs">
+      <DependentUpon>Carta.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CodeSetSet.cs">
       <DependentUpon>GIBDD.tt</DependentUpon>
     </Compile>
@@ -88,6 +91,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GIBDD.edmx</DependentUpon>
     </Compile>
+    <Compile Include="licence.cs">
+      <DependentUpon>GIBDD.tt</DependentUpon>
+    </Compile>
     <Compile Include="MakeVod.xaml.cs">
       <DependentUpon>MakeVod.xaml</DependentUpon>
     </Compile>
@@ -98,6 +104,10 @@
       <DependentUpon>Voditeli.xaml</DependentUpon>
     </Compile>
     <Page Include="AddVoditel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Carta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -155,12 +165,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="gibdd_logo %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="gibdd_logo %282%29.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

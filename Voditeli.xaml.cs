@@ -44,9 +44,33 @@ namespace WpfApp2
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            AddVoditel addVoditel = new AddVoditel();
-            addVoditel.Show();
+            
 
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            using (GIBDDContainer db = new GIBDDContainer())
+            {
+                Drivers driver = new Drivers();
+                driver.address = TextBoxName.Text;
+                driver.addressLife = TextBoxAdressReg.Text;
+                driver.company = TextBoxWork.Text;
+                driver.descreption = TextBoxNote.Text;
+                driver.email = TextBoxEmail.Text;
+                driver.phone = TextBoxPhone.Text;
+                driver.name = TBSurname.Text;
+                driver.lastname = TextBoxSurname.Text;
+                driver.middlename = TextBoxMiddleName.Text;
+
+                driver.photo = path.Substring(path.LastIndexOf("\\") + 1);
+                driver.postCode = int.Parse(TextBoxId.Text);
+
+                db.Drivers.Add(driver);
+                db.SaveChanges();
+
+
+            }
         }
     }
 }

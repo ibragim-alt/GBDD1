@@ -9,6 +9,7 @@
         <EntityTypeShape EntityType="GIBDD.Drivers" Width="1.5" PointX="2.75" PointY="0.75" />
         <EntityTypeShape EntityType="GIBDD.SubjectsSetSet" Width="1.5" PointX="4.75" PointY="0.75" />
         <AssociationConnector Association="GIBDD.FK_CodeSetSet_SubjetsSetSet" />
+        <EntityTypeShape EntityType="GIBDD.licence" Width="1.5" PointX="0.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

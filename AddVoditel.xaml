@@ -10,7 +10,7 @@
         <Grid HorizontalAlignment="Left" Height="76" Margin="-1,1,0,0" VerticalAlignment="Top" Width="792" Background="#FFE0A9AF">
             <Label Content="Добавить водителя" HorizontalAlignment="Left" Margin="215,7,0,0" VerticalAlignment="Top" Height="57" Width="389" FontSize="36"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="340" Margin="0,79,0,0" VerticalAlignment="Top" Width="792" Background="#FFB5D5CA">
+        <Grid x:Name="GridVod" HorizontalAlignment="Left" Height="340" Margin="0,79,0,0" VerticalAlignment="Top" Width="792" Background="#FFB5D5CA">
             <TextBox x:Name="TextBoxId" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="186,6,0,0"/>
             <Label Content="Фамилия*" HorizontalAlignment="Left" Margin="15,49,0,0" VerticalAlignment="Top"/>
             <Label Content="Имя*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,84,0,0"/>

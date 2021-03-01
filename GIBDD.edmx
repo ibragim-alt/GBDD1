@@ -32,6 +32,17 @@
           <Property Name="photo" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="descreption" Type="nchar" MaxLength="10" />
         </EntityType>
+        <EntityType Name="licence">
+          <Key>
+            <PropertyRef Name="idDriver" />
+          </Key>
+          <Property Name="idDriver" Type="int" Nullable="false" />
+          <Property Name="licence date" Type="date" />
+          <Property Name="expire date" Type="date" />
+          <Property Name="categories" Type="nvarchar" MaxLength="50" />
+          <Property Name="licence series" Type="int" />
+          <Property Name="licence number" Type="int" />
+        </EntityType>
         <EntityType Name="SubjectsSetSet">
           <Key>
             <PropertyRef Name="IdSubject" />
@@ -56,6 +67,7 @@
         <EntityContainer Name="GIBDDStoreContainer">
           <EntitySet Name="CodeSetSet" EntityType="Self.CodeSetSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Drivers" EntityType="Self.Drivers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="licence" EntityType="Self.licence" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SubjectsSetSet" EntityType="Self.SubjectsSetSet" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_CodeSetSet_SubjetsSetSet" Association="Self.FK_CodeSetSet_SubjetsSetSet">
             <End Role="SubjectsSetSet" EntitySet="SubjectsSetSet" />
@@ -74,6 +86,7 @@
             <End Role="SubjectsSetSet" EntitySet="SubjectsSetSet" />
             <End Role="CodeSetSet" EntitySet="CodeSetSet" />
           </AssociationSet>
+          <EntitySet Name="licence" EntityType="GIBDD.licence" />
         </EntityContainer>
         <EntityType Name="CodeSetSet">
           <Key>
@@ -125,6 +138,17 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="licence">
+          <Key>
+            <PropertyRef Name="idDriver" />
+          </Key>
+          <Property Name="idDriver" Type="Int32" Nullable="false" />
+          <Property Name="licence_date" Type="DateTime" Precision="0" />
+          <Property Name="expire_date" Type="DateTime" Precision="0" />
+          <Property Name="categories" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="licence_series" Type="Int32" />
+          <Property Name="licence_number" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -169,6 +193,18 @@
                 <ScalarProperty Name="RegionNameEN" ColumnName="RegionNameEN" />
                 <ScalarProperty Name="RegionNameRU" ColumnName="RegionNameRU" />
                 <ScalarProperty Name="IdSubject" ColumnName="IdSubject" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="licence">
+            <EntityTypeMapping TypeName="GIBDD.licence">
+              <MappingFragment StoreEntitySet="licence">
+                <ScalarProperty Name="licence_number" ColumnName="licence number" />
+                <ScalarProperty Name="licence_series" ColumnName="licence series" />
+                <ScalarProperty Name="categories" ColumnName="categories" />
+                <ScalarProperty Name="expire_date" ColumnName="expire date" />
+                <ScalarProperty Name="licence_date" ColumnName="licence date" />
+                <ScalarProperty Name="idDriver" ColumnName="idDriver" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

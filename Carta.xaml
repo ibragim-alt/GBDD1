@@ -1,0 +1,29 @@
+﻿<Window x:Class="WpfApp2.Carta"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="Carta" Height="450" Width="800">
+    <Grid>
+        <Grid HorizontalAlignment="Left" Height="83" Margin="1,2,0,0" VerticalAlignment="Top" Width="789" Background="#FFE0A9AF">
+            <Label Content="Удостоверение водителя" HorizontalAlignment="Left" Margin="203,28,0,0" VerticalAlignment="Top" Height="38" Width="359" FontSize="24"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="329" Margin="1,88,0,0" VerticalAlignment="Top" Width="788" Background="#FFB5D5CA">
+            <Image HorizontalAlignment="Left" Height="217" Margin="17,20,0,0" VerticalAlignment="Top" Width="159"/>
+            <TextBox x:Name="TBSurname"  HorizontalAlignment="Left" Height="23" Margin="252,16,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="TBName" HorizontalAlignment="Left" Height="23" Margin="252,54,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="88" TextChanged="TextBox_TextChanged"/>
+            <TextBox x:Name="TBMiddle" HorizontalAlignment="Left" Height="23" Margin="349,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="TBYears" HorizontalAlignment="Left" Height="23" Margin="252,91,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="TBDate" HorizontalAlignment="Left" Height="23" Margin="253,126,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="TBDate1" HorizontalAlignment="Left" Height="23" Margin="387,124,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="TBOrganGBDD"  HorizontalAlignment="Left" Height="23" Margin="254,159,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="TBSeries" HorizontalAlignment="Left" Height="23" Margin="254,193,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="TBNumber" HorizontalAlignment="Left" Height="23" Margin="383,192,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="TBLife" HorizontalAlignment="Left" Height="23" Margin="253,224,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="TBCategories" HorizontalAlignment="Left" Height="23" Margin="255,255,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        </Grid>
+
+    </Grid>
+</Window>
