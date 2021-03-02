@@ -67,8 +67,8 @@
     <Compile Include="AddVoditel.xaml.cs">
       <DependentUpon>AddVoditel.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Carta.xaml.cs">
-      <DependentUpon>Carta.xaml</DependentUpon>
+    <Compile Include="WinLicence.xaml.cs">
+      <DependentUpon>WinLicence.xaml</DependentUpon>
     </Compile>
     <Compile Include="CodeSetSet.cs">
       <DependentUpon>GIBDD.tt</DependentUpon>
@@ -107,7 +107,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Carta.xaml">
+    <Page Include="WinLicence.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -180,6 +180,7 @@
       <LastGenOutput>GIBDD.cs</LastGenOutput>
       <DependentUpon>GIBDD.edmx</DependentUpon>
     </Content>
+    <Resource Include="gibdd_logo %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

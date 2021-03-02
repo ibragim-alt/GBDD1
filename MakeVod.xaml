@@ -7,16 +7,35 @@
         mc:Ignorable="d"
         Title="MakeVod" Height="450" Width="800">
     <Grid>
-        <Label Content="ID" HorizontalAlignment="Left" Margin="40,42,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="113,47,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Имя" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="41,92,0,0"/>
-        <Label Content="Фамилия" HorizontalAlignment="Left" Margin="41,132,0,0" VerticalAlignment="Top"/>
-        <Label Content="Отчество" HorizontalAlignment="Left" Margin="41,178,0,0" VerticalAlignment="Top"/>
-        <Label Content="Паспорт" HorizontalAlignment="Left" Margin="43,219,0,0" VerticalAlignment="Top"/>
-        <Label Content="Адресс регистрации" HorizontalAlignment="Left" Margin="347,45,0,0" VerticalAlignment="Top"/>
-        <Label Content="Адресс проживания" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="346,85,0,0"/>
-        <Label Content="Место работы " HorizontalAlignment="Left" Margin="346,126,0,0" VerticalAlignment="Top"/>
-        <Label Content="Должность" HorizontalAlignment="Left" Margin="345,171,0,0" VerticalAlignment="Top"/>
-
+        <Grid HorizontalAlignment="Left" Height="77" Margin="0,1,0,0" VerticalAlignment="Top" Width="790" Background="#FFE0A9AF">
+            <Label Content="Изменение водителя" HorizontalAlignment="Left" Margin="197,9,0,0" VerticalAlignment="Top" Height="58" Width="378" FontSize="36"/>
+            <Image HorizontalAlignment="Left" Height="77" Margin="1,1,0,-1" VerticalAlignment="Top" Width="77"/>
+            <Image Margin="4,4,720,5" Source="gibdd_logo (1).png" Stretch="Fill" RenderTransformOrigin="2.62,-1.026"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="337" Margin="2,79,0,0" VerticalAlignment="Top" Width="789" Background="#FFB5D5CA">
+            <Label Content="Имя" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="36,38,0,0"/>
+            <Label Content="Фамилия" HorizontalAlignment="Left" Margin="35,81,0,0" VerticalAlignment="Top"/>
+            <Label Content="Отчество" HorizontalAlignment="Left" Margin="32,123,0,0" VerticalAlignment="Top"/>
+            <Label Content="Паспорт" HorizontalAlignment="Left" Margin="34,165,0,0" VerticalAlignment="Top"/>
+            <Label Content="Адресс регистрации" HorizontalAlignment="Left" Margin="331,38,0,0" VerticalAlignment="Top"/>
+            <Label Content="Адресс проживания" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="331,76,0,0"/>
+            <Label Content="Место работы " HorizontalAlignment="Left" Margin="330,119,0,0" VerticalAlignment="Top"/>
+            <Label Content="Должность" HorizontalAlignment="Left" Margin="330,162,0,0" VerticalAlignment="Top"/>
+            <Label Content="Мобильный телефон" HorizontalAlignment="Left" Margin="330,198,0,0" VerticalAlignment="Top"/>
+            <Label Content="Email" HorizontalAlignment="Left" Margin="331,234,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="TextBoxMakeReg"  x:FieldModifier="public" HorizontalAlignment="Left" Height="23" Margin="476,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="TextBoxMakeLife" x:FieldModifier="public"  HorizontalAlignment="Left" Height="23" Margin="474,77,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="TextBoxMakeWork" x:FieldModifier="public" HorizontalAlignment="Left" Height="23" Margin="475,119,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="TextBoxMakeJobName" x:FieldModifier="public" HorizontalAlignment="Left" Height="23" Margin="479,163,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="TextBoxMakePhone"  x:FieldModifier="public" HorizontalAlignment="Left" Height="23" Margin="478,199,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="TextBoxMakeEmail" x:FieldModifier="public" HorizontalAlignment="Left" Height="23" Margin="477,235,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="TextBoxMakeName" x:FieldModifier="public"  HorizontalAlignment="Left" Height="23" Margin="116,38,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="TextBoxMakeSurname" x:FieldModifier="public" HorizontalAlignment="Left" Height="23" Margin="117,81,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="TextBoxMakeMiddle" x:FieldModifier="public" HorizontalAlignment="Left" Height="23" Margin="117,123,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="TextBoxMakePasportSeria"  x:FieldModifier="public" HorizontalAlignment="Left" Height="20" Margin="32,196,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="71"/>
+            <TextBox x:Name="TextBoxMakePasportNumber" x:FieldModifier="public" HorizontalAlignment="Left" Height="23" Margin="119,195,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="69"/>
+            <Button Content="OK" HorizontalAlignment="Left" Margin="59,282,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" IsDefault="True"/>
+            <Button Content="Отмена" HorizontalAlignment="Left" Margin="169,282,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1" IsCancel="True"/>
+        </Grid>
     </Grid>
 </Window>

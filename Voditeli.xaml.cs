@@ -44,32 +44,54 @@ namespace WpfApp2
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            AddVoditel addVoditel = new AddVoditel();
+            addVoditel.Show();
 
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            using (GIBDDContainer db = new GIBDDContainer())
             {
-                Drivers driver = new Drivers();
-                driver.address = TextBoxName.Text;
-                driver.addressLife = TextBoxAdressReg.Text;
-                driver.company = TextBoxWork.Text;
-                driver.descreption = TextBoxNote.Text;
-                driver.email = TextBoxEmail.Text;
-                driver.phone = TextBoxPhone.Text;
-                driver.name = TBSurname.Text;
-                driver.lastname = TextBoxSurname.Text;
-                driver.middlename = TextBoxMiddleName.Text;
+                if (DataGridVod.Items.Count > 0)
+                {
+                    var index = DataGridVod.SelectedItem;
+                    if (index != null)
+                    {
+                        int id = int.Parse((DataGridVod.SelectedCells[0].Column.GetCellContent(index) as TextBlock).Text);
 
-                driver.photo = path.Substring(path.LastIndexOf("\\") + 1);
-                driver.postCode = int.Parse(TextBoxId.Text);
+                        MakeVod make = new MakeVod();
 
-                db.Drivers.Add(driver);
-                db.SaveChanges();
+                        using (GIBDDContainer db = new GIBDDContainer())
 
+                        {
+                           
 
+                            Drivers drivers = db.Drivers.Find(id);
+
+                            make.TextBoxMakeName.Text = drivers.name;
+
+                            make.TextBoxMakeSurname.Text = drivers.lastname;
+
+                            make.TextBoxMakeMiddle.Text = drivers.middlename;
+                            make.TextBoxMakePasportSeria.Text = drivers.passportSerial.ToString();
+                            make.TextBoxMakePasportNumber.Text = drivers.passportNumber.ToString();
+                            make.TextBoxMakeReg.Text = drivers.address;
+                            make.TextBoxMakeLife.Text = drivers.addressLife;
+                            make.TextBoxMakeWork.Text = drivers.company;
+                            make.TextBoxMakeJobName.Text = drivers.jobname;
+                            make.TextBoxMakePhone.Text = drivers.phone;
+                            make.TextBoxMakeEmail.Text = drivers.email;
+                           // MessageBox.Show(make.ShowDialog().HasValue.ToString());
+                            if (!make.ShowDialog().HasValue) return;
+
+                            drivers.name=make.TextBoxMakeName.Text;
+                            db.SaveChanges();
+                            FillTable();
+
+                        }
+                    }
+
+                }
             }
         }
     }

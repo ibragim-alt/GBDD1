@@ -9,8 +9,10 @@
     <Grid>
         <Grid HorizontalAlignment="Left" Height="83" Margin="1,2,0,0" VerticalAlignment="Top" Width="789" Background="#FFE0A9AF">
             <Label Content="Удостоверение водителя" HorizontalAlignment="Left" Margin="203,28,0,0" VerticalAlignment="Top" Height="38" Width="359" FontSize="24"/>
+            <Image HorizontalAlignment="Left" Height="79" Margin="3,2,0,0" VerticalAlignment="Top" Width="79"/>
+            <Image Margin="2,6,715,6" Source="gibdd_logo (1).png" Stretch="Fill"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="329" Margin="1,88,0,0" VerticalAlignment="Top" Width="788" Background="#FFB5D5CA">
+        <Grid HorizontalAlignment="Left" Height="329" Margin="1,88,0,0" VerticalAlignment="Top" Width="788" Background="#FFB5D5CA" OpacityMask="Black">
             <Image HorizontalAlignment="Left" Height="217" Margin="17,20,0,0" VerticalAlignment="Top" Width="159"/>
             <TextBox x:Name="TBSurname"  HorizontalAlignment="Left" Height="23" Margin="252,16,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
             <TextBox x:Name="TBName" HorizontalAlignment="Left" Height="23" Margin="252,54,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="88" TextChanged="TextBox_TextChanged"/>

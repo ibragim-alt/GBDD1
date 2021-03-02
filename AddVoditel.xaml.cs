@@ -55,7 +55,7 @@ namespace WpfApp2
                     {
                         if (TextBoxMiddleName.Text.Length != 0)
                         {
-                            if (TextBoxPasport.Text.Length != 0)
+                            if (TextBoxPasSeria.Text.Length != 0 || TextBoxPasNumber.Text.Length !=0)
                             {
                                 if (TextBoxAdressReg.Text.Length != 0 || TextBoxAdress.Text.Length != 0)
                                 {
@@ -77,7 +77,8 @@ namespace WpfApp2
                                                     driver.name = TextBoxName.Text;
                                                     driver.lastname = TextBoxSurname.Text;
                                                     driver.middlename = TextBoxMiddleName.Text;
-
+                                                    driver.passportSerial = int.Parse(TextBoxPasSeria.Text);
+                                                    driver.passportNumber = int.Parse(TextBoxPasNumber.Text);
                                                     driver.photo = path.Substring(path.LastIndexOf("\\") + 1);
                                                     driver.postCode = int.Parse(TextBoxId.Text);
                                                     

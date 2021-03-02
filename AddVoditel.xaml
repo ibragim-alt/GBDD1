@@ -27,7 +27,7 @@
             <TextBox x:Name="TextBoxSurname" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="186,48,0,0"/>
             <TextBox x:Name="TextBoxName"  HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="185,82,0,0"/>
             <TextBox x:Name="TextBoxMiddleName" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="186,116,0,0"/>
-            <TextBox x:Name="TextBoxPasport" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="187,151,0,0"/>
+            <TextBox x:Name="TextBoxPasSeria" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="83" Margin="18,179,0,0"/>
             <TextBox x:Name="TextBoxAdressReg"  HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="594,3,0,0"/>
             <TextBox x:Name="TextBoxAdress"  HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="595,32,0,0"/>
             <TextBox x:Name="TextBoxWork" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="596,59,0,0"/>
@@ -38,9 +38,10 @@
             <Button x:Name="ButtonOk" Content="Добавить" HorizontalAlignment="Left" Margin="104,294,0,0" VerticalAlignment="Top" Width="118" Height="36" Click="ButtonOk_Click"/>
             <Image x:Name="ImagePhoto"  HorizontalAlignment="Left" Height="138" Margin="444,188,0,0" VerticalAlignment="Top" Width="134"/>
             <Button x:Name="ButtonLoad" Content="Загрузить фото" HorizontalAlignment="Left" VerticalAlignment="Top" Width="139" Margin="266,294,0,0" Height="30" Click="ButtonLoad_Click_1"/>
+            <TextBox x:Name="TextBoxPasNumber"  HorizontalAlignment="Left" Height="23" Margin="122,181,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="86"/>
         </Grid>
-        <Image Margin="4,4,714,344" Source="gibdd_logo (2).png" Stretch="Fill"/>
         <Label Content="ID*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,86,0,0"/>
+        <Image Margin="6,4,718,346" Source="gibdd_logo (1).png" Stretch="Fill"/>
 
     </Grid>
 </Window>

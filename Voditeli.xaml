@@ -7,9 +7,11 @@
         mc:Ignorable="d"
         Title="Voditeli" Height="450" Width="800">
     <Grid>
-        <Grid HorizontalAlignment="Left" Height="74" Margin="0,1,-2,0" VerticalAlignment="Top" Width="794" Background="#FFE0A9AF"/>
+        <Grid HorizontalAlignment="Left" Height="74" Margin="0,1,-2,0" VerticalAlignment="Top" Width="794" Background="#FFE0A9AF" OpacityMask="Black">
+            <Image HorizontalAlignment="Left" Height="72" Margin="4,2,0,0" VerticalAlignment="Top" Width="74"/>
+            <Image Margin="2,4,726,4" Source="gibdd_logo (1).png" Stretch="Fill"/>
+        </Grid>
         <Label Content="Водители" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="282,10,0,0" Height="55" Width="239" FontSize="36"/>
-        <Image Margin="3,4,724,346" Source="gibdd_logo (2).png" Stretch="Fill"/>
         <DataGrid x:Name="DataGridVod"  HorizontalAlignment="Left" Height="288" Margin="1,75,0,0" VerticalAlignment="Top" Width="788" Background="#FFB5D5CA" AlternatingRowBackground="#FFD1EEFC" RowBackground="#FFFFFCD6"/>
         <Grid HorizontalAlignment="Left" Height="52" Margin="2,365,0,0" VerticalAlignment="Top" Width="787" Background="#FFE0A9AF">
             <Button Content="Добавить" HorizontalAlignment="Left" Margin="41,13,0,0" VerticalAlignment="Top" Width="106" Height="27" Click="Button_Click"/>
