@@ -5,11 +5,8 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="b7e465b9b51b41ce876c04f510fd40a4" Name="Diagram1" >
-        <EntityTypeShape EntityType="GIBDD.CodeSetSet" Width="1.5" PointX="7" PointY="0.875" />
         <EntityTypeShape EntityType="GIBDD.Drivers" Width="1.5" PointX="2.75" PointY="0.75" />
-        <EntityTypeShape EntityType="GIBDD.SubjectsSetSet" Width="1.5" PointX="4.75" PointY="0.75" />
-        <AssociationConnector Association="GIBDD.FK_CodeSetSet_SubjetsSetSet" />
-        <EntityTypeShape EntityType="GIBDD.licence" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="GIBDD.licence" Width="1.5" PointX="0.625" PointY="1.375" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

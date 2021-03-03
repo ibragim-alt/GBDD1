@@ -69,9 +69,7 @@ namespace WpfApp2
                             Drivers drivers = db.Drivers.Find(id);
 
                             make.TextBoxMakeName.Text = drivers.name;
-
                             make.TextBoxMakeSurname.Text = drivers.lastname;
-
                             make.TextBoxMakeMiddle.Text = drivers.middlename;
                             make.TextBoxMakePasportSeria.Text = drivers.passportSerial.ToString();
                             make.TextBoxMakePasportNumber.Text = drivers.passportNumber.ToString();
@@ -85,6 +83,17 @@ namespace WpfApp2
                             if (!make.ShowDialog().HasValue) return;
 
                             drivers.name=make.TextBoxMakeName.Text;
+                            drivers.lastname = make.TextBoxMakeSurname.Text;
+                            drivers.middlename = make.TextBoxMakeMiddle.Text;
+                            drivers.passportSerial=int.Parse(make.TextBoxMakePasportSeria.Text);
+                            drivers.passportNumber = int.Parse(make.TextBoxMakePasportSeria.Text);
+                            drivers.address = make.TextBoxMakeReg.Text;
+                            drivers.addressLife = make.TextBoxMakeLife.Text;
+                            drivers.company = make.TextBoxMakeWork.Text;
+                            drivers.jobname = make.TextBoxMakeJobName.Text;
+                            drivers.phone = make.TextBoxMakePhone.Text;
+                            drivers.email = make.TextBoxMakeEmail.Text;
+
                             db.SaveChanges();
                             FillTable();
 
@@ -93,6 +102,11 @@ namespace WpfApp2
 
                 }
             }
+        }
+
+        private void ButtonCarta_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

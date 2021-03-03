@@ -14,10 +14,10 @@
         <Label Content="Водители" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="282,10,0,0" Height="55" Width="239" FontSize="36"/>
         <DataGrid x:Name="DataGridVod"  HorizontalAlignment="Left" Height="288" Margin="1,75,0,0" VerticalAlignment="Top" Width="788" Background="#FFB5D5CA" AlternatingRowBackground="#FFD1EEFC" RowBackground="#FFFFFCD6"/>
         <Grid HorizontalAlignment="Left" Height="52" Margin="2,365,0,0" VerticalAlignment="Top" Width="787" Background="#FFE0A9AF">
-            <Button Content="Добавить" HorizontalAlignment="Left" Margin="41,13,0,0" VerticalAlignment="Top" Width="106" Height="27" Click="Button_Click"/>
-            <Button Content="ВУ" HorizontalAlignment="Left" Margin="279,12,0,0" VerticalAlignment="Top" Width="86" Height="28" Click="Button_Click_1"/>
+            <Button x:Name="ButtonAdd"  Content="Добавить" HorizontalAlignment="Left" Margin="41,13,0,0" VerticalAlignment="Top" Width="106" Height="27" Click="Button_Click"/>
+            <Button x:Name="ButtonCreate" Content="Редактировать" HorizontalAlignment="Left" Margin="163,11,0,0" VerticalAlignment="Top" Width="86" Height="28" Click="Button_Click_1"/>
+            <Button x:Name="ButtonCarta" Content="ВУ" HorizontalAlignment="Left" Margin="263,10,0,0" VerticalAlignment="Top" Width="84" Height="30" Click="ButtonCarta_Click"/>
         </Grid>
-        <Button Content="Редактировать" HorizontalAlignment="Left" VerticalAlignment="Top" Width="97" Margin="169,376,0,0" Height="29" Click="Button_Click_1"/>
 
     </Grid>
 </Window>

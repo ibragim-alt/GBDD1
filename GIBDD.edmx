@@ -5,13 +5,6 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="GIBDD.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="CodeSetSet">
-          <Key>
-            <PropertyRef Name="IdCode" />
-          </Key>
-          <Property Name="IdCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdSubject" Type="int" Nullable="false" />
-        </EntityType>
         <EntityType Name="Drivers">
           <Key>
             <PropertyRef Name="Id" />
@@ -40,62 +33,20 @@
           <Property Name="licence date" Type="date" />
           <Property Name="expire date" Type="date" />
           <Property Name="categories" Type="nvarchar" MaxLength="50" />
-          <Property Name="licence series" Type="int" />
-          <Property Name="licence number" Type="int" />
+          <Property Name="licenceNum" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="SubjectsSetSet">
-          <Key>
-            <PropertyRef Name="IdSubject" />
-          </Key>
-          <Property Name="IdSubject" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="RegionNameRU" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="RegionNameEN" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="ISO" Type="nvarchar(max)" Nullable="false" />
-        </EntityType>
-        <Association Name="FK_CodeSetSet_SubjetsSetSet">
-          <End Role="SubjectsSetSet" Type="Self.SubjectsSetSet" Multiplicity="1" />
-          <End Role="CodeSetSet" Type="Self.CodeSetSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SubjectsSetSet">
-              <PropertyRef Name="IdSubject" />
-            </Principal>
-            <Dependent Role="CodeSetSet">
-              <PropertyRef Name="IdSubject" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="GIBDDStoreContainer">
-          <EntitySet Name="CodeSetSet" EntityType="Self.CodeSetSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Drivers" EntityType="Self.Drivers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="licence" EntityType="Self.licence" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="SubjectsSetSet" EntityType="Self.SubjectsSetSet" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_CodeSetSet_SubjetsSetSet" Association="Self.FK_CodeSetSet_SubjetsSetSet">
-            <End Role="SubjectsSetSet" EntitySet="SubjectsSetSet" />
-            <End Role="CodeSetSet" EntitySet="CodeSetSet" />
-          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="GIBDD" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
         <EntityContainer Name="GIBDDContainer" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="CodeSetSet" EntityType="GIBDD.CodeSetSet" />
           <EntitySet Name="Drivers" EntityType="GIBDD.Drivers" />
-          <EntitySet Name="SubjectsSetSet" EntityType="GIBDD.SubjectsSetSet" />
-          <AssociationSet Name="FK_CodeSetSet_SubjetsSetSet" Association="GIBDD.FK_CodeSetSet_SubjetsSetSet">
-            <End Role="SubjectsSetSet" EntitySet="SubjectsSetSet" />
-            <End Role="CodeSetSet" EntitySet="CodeSetSet" />
-          </AssociationSet>
           <EntitySet Name="licence" EntityType="GIBDD.licence" />
         </EntityContainer>
-        <EntityType Name="CodeSetSet">
-          <Key>
-            <PropertyRef Name="IdCode" />
-          </Key>
-          <Property Name="IdCode" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdSubject" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="SubjectsSetSet" Relationship="GIBDD.FK_CodeSetSet_SubjetsSetSet" FromRole="CodeSetSet" ToRole="SubjectsSetSet" />
-        </EntityType>
         <EntityType Name="Drivers">
           <Key>
             <PropertyRef Name="Id" />
@@ -116,28 +67,6 @@
           <Property Name="photo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="descreption" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
-        <EntityType Name="SubjectsSetSet">
-          <Key>
-            <PropertyRef Name="IdSubject" />
-          </Key>
-          <Property Name="IdSubject" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="RegionNameRU" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="RegionNameEN" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ISO" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="CodeSetSet" Relationship="GIBDD.FK_CodeSetSet_SubjetsSetSet" FromRole="SubjectsSetSet" ToRole="CodeSetSet" />
-        </EntityType>
-        <Association Name="FK_CodeSetSet_SubjetsSetSet">
-          <End Type="GIBDD.SubjectsSetSet" Role="SubjectsSetSet" Multiplicity="1" />
-          <End Type="GIBDD.CodeSetSet" Role="CodeSetSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SubjectsSetSet">
-              <PropertyRef Name="IdSubject" />
-            </Principal>
-            <Dependent Role="CodeSetSet">
-              <PropertyRef Name="IdSubject" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="licence">
           <Key>
             <PropertyRef Name="idDriver" />
@@ -146,8 +75,7 @@
           <Property Name="licence_date" Type="DateTime" Precision="0" />
           <Property Name="expire_date" Type="DateTime" Precision="0" />
           <Property Name="categories" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="licence_series" Type="Int32" />
-          <Property Name="licence_number" Type="Int32" />
+          <Property Name="licenceNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -157,14 +85,6 @@
         <Alias Key="Model" Value="GIBDD" />
         <Alias Key="Target" Value="GIBDD.Store" />
         <EntityContainerMapping CdmEntityContainer="GIBDDContainer" StorageEntityContainer="GIBDDStoreContainer">
-          <EntitySetMapping Name="CodeSetSet">
-            <EntityTypeMapping TypeName="GIBDD.CodeSetSet">
-              <MappingFragment StoreEntitySet="CodeSetSet">
-                <ScalarProperty Name="IdSubject" ColumnName="IdSubject" />
-                <ScalarProperty Name="IdCode" ColumnName="IdCode" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Drivers">
             <EntityTypeMapping TypeName="GIBDD.Drivers">
               <MappingFragment StoreEntitySet="Drivers">
@@ -186,21 +106,10 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="SubjectsSetSet">
-            <EntityTypeMapping TypeName="GIBDD.SubjectsSetSet">
-              <MappingFragment StoreEntitySet="SubjectsSetSet">
-                <ScalarProperty Name="ISO" ColumnName="ISO" />
-                <ScalarProperty Name="RegionNameEN" ColumnName="RegionNameEN" />
-                <ScalarProperty Name="RegionNameRU" ColumnName="RegionNameRU" />
-                <ScalarProperty Name="IdSubject" ColumnName="IdSubject" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="licence">
             <EntityTypeMapping TypeName="GIBDD.licence">
               <MappingFragment StoreEntitySet="licence">
-                <ScalarProperty Name="licence_number" ColumnName="licence number" />
-                <ScalarProperty Name="licence_series" ColumnName="licence series" />
+                <ScalarProperty Name="licenceNum" ColumnName="licenceNum" />
                 <ScalarProperty Name="categories" ColumnName="categories" />
                 <ScalarProperty Name="expire_date" ColumnName="expire date" />
                 <ScalarProperty Name="licence_date" ColumnName="licence date" />

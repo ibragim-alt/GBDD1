@@ -70,9 +70,6 @@
     <Compile Include="WinLicence.xaml.cs">
       <DependentUpon>WinLicence.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CodeSetSet.cs">
-      <DependentUpon>GIBDD.tt</DependentUpon>
-    </Compile>
     <Compile Include="Drivers.cs">
       <DependentUpon>GIBDD.tt</DependentUpon>
     </Compile>
@@ -96,9 +93,6 @@
     </Compile>
     <Compile Include="MakeVod.xaml.cs">
       <DependentUpon>MakeVod.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="SubjectsSetSet.cs">
-      <DependentUpon>GIBDD.tt</DependentUpon>
     </Compile>
     <Compile Include="Voditeli.xaml.cs">
       <DependentUpon>Voditeli.xaml</DependentUpon>

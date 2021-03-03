@@ -18,7 +18,6 @@ namespace WpfApp2
         public Nullable<System.DateTime> licence_date { get; set; }
         public Nullable<System.DateTime> expire_date { get; set; }
         public string categories { get; set; }
-        public Nullable<int> licence_series { get; set; }
-        public Nullable<int> licence_number { get; set; }
+        public string licenceNum { get; set; }
     }
 }
