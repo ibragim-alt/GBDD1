@@ -106,7 +106,58 @@ namespace WpfApp2
 
         private void ButtonCarta_Click(object sender, RoutedEventArgs e)
         {
+            {
+                if (DataGridVod.Items.Count > 0)
+                {
+                    var index = DataGridVod.SelectedItem;
+                    if (index != null)
+                    {
+                        int id = int.Parse((DataGridVod.SelectedCells[0].Column.GetCellContent(index) as TextBlock).Text);
 
+                        CardDriver card = new CardDriver();
+                        MakeVod make = new MakeVod();
+
+                        using (GIBDDContainer db = new GIBDDContainer())
+
+                        {
+
+                            Drivers drivers = db.Drivers.Find(id);
+                            licence licence = db.licence.Find(id);
+
+                            card.TBName.Text = drivers.name;
+                            card.TBSurname.Text = drivers.lastname;
+                            card.TBMiddleName.Text = drivers.middlename;
+                            card.TBDate.Text = licence.licence date;
+                            
+                            make.TextBoxMakeReg.Text = drivers.address;
+                            make.TextBoxMakeLife.Text = drivers.addressLife;
+                            make.TextBoxMakeWork.Text = drivers.company;
+                            make.TextBoxMakeJobName.Text = drivers.jobname;
+                            make.TextBoxMakePhone.Text = drivers.phone;
+                            make.TextBoxMakeEmail.Text = drivers.email;
+                            // MessageBox.Show(make.ShowDialog().HasValue.ToString());
+                            if (!make.ShowDialog().HasValue) return;
+
+                            drivers.name = make.TextBoxMakeName.Text;
+                            drivers.lastname = make.TextBoxMakeSurname.Text;
+                            drivers.middlename = make.TextBoxMakeMiddle.Text;
+                            drivers.passportSerial = int.Parse(make.TextBoxMakePasportSeria.Text);
+                            drivers.passportNumber = int.Parse(make.TextBoxMakePasportSeria.Text);
+                            drivers.address = make.TextBoxMakeReg.Text;
+                            drivers.addressLife = make.TextBoxMakeLife.Text;
+                            drivers.company = make.TextBoxMakeWork.Text;
+                            drivers.jobname = make.TextBoxMakeJobName.Text;
+                            drivers.phone = make.TextBoxMakePhone.Text;
+                            drivers.email = make.TextBoxMakeEmail.Text;
+
+                            db.SaveChanges();
+                            FillTable();
+
+                        }
+                    }
+
+                }
+            }
         }
     }
 }

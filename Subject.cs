@@ -12,14 +12,21 @@ namespace WpfApp2
     using System;
     using System.Collections.Generic;
     
-    public partial class licence
+    public partial class Subject
     {
-        public int idDriver { get; set; }
-        public Nullable<System.DateTime> licence_date { get; set; }
-        public Nullable<System.DateTime> expire_date { get; set; }
-        public string categories { get; set; }
-        public string licenceNum { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Subject()
+        {
+            this.CodeSubj = new HashSet<CodeSubj>();
+        }
     
-        public virtual Drivers Drivers { get; set; }
+        public int IdCodeSubject { get; set; }
+        public string RegionNameEN { get; set; }
+        public string RegionNameRU { get; set; }
+        public Nullable<int> Okato { get; set; }
+        public string IsoCode { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CodeSubj> CodeSubj { get; set; }
     }
 }

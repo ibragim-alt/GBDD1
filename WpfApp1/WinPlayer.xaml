@@ -1,0 +1,27 @@
+﻿<Window x:Class="WpfApp1.WinPlayer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="WinPlayer" Height="450" Width="800">
+    <Grid>
+        <Label Content="Имя" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="48,36,0,0"/>
+        <TextBox x:Name="TextBoxName" x:FieldModifier="public" HorizontalAlignment="Left" Height="23" Margin="164,39,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Позиция" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="47,97,0,0"/>
+        <ComboBox x:Name="ComboBoxPos" x:FieldModifier="public" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="162,101,0,0" SelectedIndex="0">
+            <ComboBoxItem Content="Полузащитник"/>
+            <ComboBoxItem Content="Защитник"/>
+            <ComboBoxItem Content="Нападающий"/>
+            <ComboBoxItem Content="Вратарь"/>
+        </ComboBox>
+        <Label Content="Возраст" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="49,157,0,0"/>
+        <TextBox x:Name="TextBoxAge" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="163,160,0,0"/>
+        <Button x:Name="ButtonOk" Content="OK" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="106,314,0,0" IsDefault="True" Click="ButtonOk_Click"/>
+        <Button x:Name="ButtonCancel" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="253,313,0,0" IsCancel="True" Click="ButtonCancel_Click"/>
+        <ComboBox x:Name="ComboBoxTeam" HorizontalAlignment="Left" Margin="164,209,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Команда" HorizontalAlignment="Left" Margin="49,208,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

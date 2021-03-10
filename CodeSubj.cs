@@ -12,14 +12,11 @@ namespace WpfApp2
     using System;
     using System.Collections.Generic;
     
-    public partial class licence
+    public partial class CodeSubj
     {
-        public int idDriver { get; set; }
-        public Nullable<System.DateTime> licence_date { get; set; }
-        public Nullable<System.DateTime> expire_date { get; set; }
-        public string categories { get; set; }
-        public string licenceNum { get; set; }
+        public int IdCode { get; set; }
+        public Nullable<int> CodeSubject { get; set; }
     
-        public virtual Drivers Drivers { get; set; }
+        public virtual Subject Subject { get; set; }
     }
 }

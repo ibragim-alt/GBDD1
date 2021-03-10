@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0F0F61D6-CF84-48B3-A323-AD68EFA926FD}</ProjectGuid>
+    <ProjectGuid>{DA4BFC19-494C-4206-9A0D-2013D4CBB707}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WpfApp2</RootNamespace>
-    <AssemblyName>WpfApp2</AssemblyName>
+    <RootNamespace>WpfApp1</RootNamespace>
+    <AssemblyName>WpfApp1</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -64,63 +64,42 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AddVoditel.xaml.cs">
-      <DependentUpon>AddVoditel.xaml</DependentUpon>
+    <Compile Include="Player.cs">
+      <DependentUpon>Soccer.tt</DependentUpon>
     </Compile>
-    <Compile Include="CardDriver.xaml.cs">
-      <DependentUpon>CardDriver.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="CodeSubj.cs">
-      <DependentUpon>GIBDD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Drivers.cs">
-      <DependentUpon>GIBDD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="licence.cs">
-      <DependentUpon>GIBDD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Subject.cs">
-      <DependentUpon>GIBDD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagrams.cs">
-      <DependentUpon>GIBDD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="WinLicence.xaml.cs">
-      <DependentUpon>WinLicence.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="GIBDD.Context.cs">
+    <Compile Include="Soccer.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>GIBDD.Context.tt</DependentUpon>
+      <DependentUpon>Soccer.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="GIBDD.cs">
+    <Compile Include="Soccer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>GIBDD.tt</DependentUpon>
+      <DependentUpon>Soccer.tt</DependentUpon>
     </Compile>
-    <Compile Include="GIBDD.Designer.cs">
+    <Compile Include="Soccer.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>GIBDD.edmx</DependentUpon>
+      <DependentUpon>Soccer.edmx</DependentUpon>
     </Compile>
-    <Compile Include="MakeVod.xaml.cs">
-      <DependentUpon>MakeVod.xaml</DependentUpon>
+    <Compile Include="Team.cs">
+      <DependentUpon>Soccer.tt</DependentUpon>
     </Compile>
-    <Compile Include="Voditeli.xaml.cs">
-      <DependentUpon>Voditeli.xaml</DependentUpon>
+    <Compile Include="WinLinq.xaml.cs">
+      <DependentUpon>WinLinq.xaml</DependentUpon>
     </Compile>
-    <Page Include="AddVoditel.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="CardDriver.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WinLicence.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <Compile Include="WinLinq2.xaml.cs">
+      <DependentUpon>WinLinq2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinPlayer.xaml.cs">
+      <DependentUpon>WinPlayer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinSql.xaml.cs">
+      <DependentUpon>WinSql.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinTeam.xaml.cs">
+      <DependentUpon>WinTeam.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -133,11 +112,23 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="MakeVod.xaml">
+    <Page Include="WinLinq.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Voditeli.xaml">
+    <Page Include="WinLinq2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinPlayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinSql.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinTeam.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -160,37 +151,37 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="GIBDD.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>GIBDD.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="GIBDD.edmx.diagram">
-      <DependentUpon>GIBDD.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <EntityDeploy Include="Soccer.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Soccer.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Soccer.edmx.diagram">
+      <DependentUpon>Soccer.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="Soccer.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Soccer.Context.cs</LastGenOutput>
+      <DependentUpon>Soccer.edmx</DependentUpon>
+    </Content>
+    <Content Include="Soccer.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Soccer.cs</LastGenOutput>
+      <DependentUpon>Soccer.edmx</DependentUpon>
+    </Content>
+    <Content Include="Socer.edmx.sql" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="GIBDD.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>GIBDD.Context.cs</LastGenOutput>
-      <DependentUpon>GIBDD.edmx</DependentUpon>
-    </Content>
-    <Content Include="GIBDD.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>GIBDD.cs</LastGenOutput>
-      <DependentUpon>GIBDD.edmx</DependentUpon>
-    </Content>
-    <Resource Include="gibdd_logo %281%29.png" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

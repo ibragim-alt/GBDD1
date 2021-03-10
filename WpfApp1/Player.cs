@@ -7,19 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WpfApp2
+namespace WpfApp1
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class licence
+    public partial class Player
     {
-        public int idDriver { get; set; }
-        public Nullable<System.DateTime> licence_date { get; set; }
-        public Nullable<System.DateTime> expire_date { get; set; }
-        public string categories { get; set; }
-        public string licenceNum { get; set; }
-    
-        public virtual Drivers Drivers { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Position { get; set; }
+        public int Age { get; set; }
+        public Nullable<int> TeamId { get; set; }
     }
 }

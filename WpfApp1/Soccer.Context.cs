@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WpfApp2
+namespace WpfApp1
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class GIBDDContainer : DbContext
+    public partial class SoccerContainer : DbContext
     {
-        public GIBDDContainer()
-            : base("name=GIBDDContainer")
+        public SoccerContainer()
+            : base("name=SoccerContainer")
         {
         }
     
@@ -25,10 +25,7 @@ namespace WpfApp2
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<CodeSubj> CodeSubj { get; set; }
-        public virtual DbSet<Subject> Subject { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<Drivers> Drivers { get; set; }
-        public virtual DbSet<licence> licence { get; set; }
+        public virtual DbSet<Player> PlayerSet { get; set; }
+        public virtual DbSet<Team> TeamSet { get; set; }
     }
 }

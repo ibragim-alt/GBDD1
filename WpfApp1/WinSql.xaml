@@ -1,0 +1,17 @@
+﻿<Window x:Class="WpfApp1.WinSql"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="WinSql" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="DataGridWinSql" HorizontalAlignment="Left" Height="242" Margin="4,5,0,0" VerticalAlignment="Top" Width="783"/>
+        <Button x:Name="ButtonAll" Content="All" HorizontalAlignment="Left" Margin="21,335,0,0" VerticalAlignment="Top" Width="75" Click="ButtonAll_Click"/>
+        <Button x:Name="ButtonAny" Content="Any" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="120,333,0,0" Click="ButtonAny_Click"/>
+        <Button x:Name="ButtonParam" Content="Param" HorizontalAlignment="Left" Margin="214,334,0,0" VerticalAlignment="Top" Width="75" Click="ButtonParam_Click"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="312,337,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+
+    </Grid>
+</Window>

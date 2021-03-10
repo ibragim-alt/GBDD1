@@ -23,6 +23,7 @@ namespace WpfApp2
     /// </summary>
     public partial class AddVoditel : Window
     {
+
         public AddVoditel()
         {
             InitializeComponent();
@@ -81,7 +82,7 @@ namespace WpfApp2
                                                     driver.passportNumber = int.Parse(TextBoxPasNumber.Text);
                                                     driver.photo = path.Substring(path.LastIndexOf("\\") + 1);
                                                     driver.postCode = int.Parse(TextBoxId.Text);
-                                                    
+                                                    driver.jobname = TextBoxDolgnost.Text;
                                                     db.Drivers.Add(driver);
                                                     db.SaveChanges();
 
