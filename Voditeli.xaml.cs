@@ -122,33 +122,29 @@ namespace WpfApp2
                         {
 
                             Drivers drivers = db.Drivers.Find(id);
-                            licence licence = db.licence.Find(id);
+                            licence licence = db.licence.FirstOrDefault(p=>p.idDriver==id);
 
                             card.TBName.Text = drivers.name;
                             card.TBSurname.Text = drivers.lastname;
                             card.TBMiddleName.Text = drivers.middlename;
-                            card.TBDate.Text = licence.licence date;
                             
-                            make.TextBoxMakeReg.Text = drivers.address;
-                            make.TextBoxMakeLife.Text = drivers.addressLife;
-                            make.TextBoxMakeWork.Text = drivers.company;
-                            make.TextBoxMakeJobName.Text = drivers.jobname;
-                            make.TextBoxMakePhone.Text = drivers.phone;
-                            make.TextBoxMakeEmail.Text = drivers.email;
-                            // MessageBox.Show(make.ShowDialog().HasValue.ToString());
-                            if (!make.ShowDialog().HasValue) return;
+                            card.TBDateIssue.Text = licence.licence_date.ToString();
+                            card.TBDateExpire.Text = licence.expire_date.ToString();
+                            card.TBCategory.Text = licence.categories;
+                            
+                            
+                           
+                            
 
-                            drivers.name = make.TextBoxMakeName.Text;
-                            drivers.lastname = make.TextBoxMakeSurname.Text;
-                            drivers.middlename = make.TextBoxMakeMiddle.Text;
-                            drivers.passportSerial = int.Parse(make.TextBoxMakePasportSeria.Text);
-                            drivers.passportNumber = int.Parse(make.TextBoxMakePasportSeria.Text);
-                            drivers.address = make.TextBoxMakeReg.Text;
-                            drivers.addressLife = make.TextBoxMakeLife.Text;
-                            drivers.company = make.TextBoxMakeWork.Text;
-                            drivers.jobname = make.TextBoxMakeJobName.Text;
-                            drivers.phone = make.TextBoxMakePhone.Text;
-                            drivers.email = make.TextBoxMakeEmail.Text;
+                            // MessageBox.Show(make.ShowDialog().HasValue.ToString());
+                            if (!card.ShowDialog().HasValue) return;
+
+                            drivers.name = card.TBName.Text;
+                            drivers.lastname = card.TBSurname.Text;
+                            drivers.middlename = card.TBMiddleName.Text;
+                            licence.licence_date = int.Parse(card.TBDateIssue.Text);
+                            
+
 
                             db.SaveChanges();
                             FillTable();
