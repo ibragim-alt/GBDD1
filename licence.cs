@@ -15,8 +15,8 @@ namespace WpfApp2
     public partial class licence
     {
         public int idDriver { get; set; }
-        public Nullable<System.DateTime> licence_date { get; set; }
-        public Nullable<System.DateTime> expire_date { get; set; }
+        public Nullable<System.DateTime> licenceDate { get; set; }
+        public Nullable<System.DateTime> expireDate { get; set; }
         public string categories { get; set; }
         public string licenceNum { get; set; }
     

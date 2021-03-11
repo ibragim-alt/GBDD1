@@ -21,8 +21,8 @@
             <TextBox x:Name="TBDate" HorizontalAlignment="Left" Height="23" Margin="230,79,0,0" x:FieldModifier="public" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
             <Label Content="Дата выдачи" HorizontalAlignment="Left" Margin="25,111,0,0" VerticalAlignment="Top"/>
             <TextBox x:Name="TBDateIssue" HorizontalAlignment="Left" Height="23" Margin="230,113,0,0" x:FieldModifier="public" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-            <Label Content="Дата истечения срока" HorizontalAlignment="Left" Margin="355,109,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="TBDateExpire" HorizontalAlignment="Left" Height="23" Margin="486,112,0,0" x:FieldModifier="public" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.657,0.238"/>
+            <Label Content="Дата истечения срока" HorizontalAlignment="Left" Margin="350,45,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="TBDateExpire" HorizontalAlignment="Left" Height="23" Margin="484,46,0,0" x:FieldModifier="public" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.657,0.238"/>
             <Label Content="Орган выдавший" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,144,0,0"/>
             <TextBox x:Name="TBOrgan" HorizontalAlignment="Left" Height="23" Margin="231,145,0,0" x:FieldModifier="public" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
             <Label Content="Номер удостоверения" HorizontalAlignment="Left" Margin="24,172,0,0" VerticalAlignment="Top"/>
@@ -31,6 +31,8 @@
             <TextBox x:Name="TBLifeAdress" HorizontalAlignment="Left" Height="23" Margin="232,202,0,0" TextWrapping="Wrap" x:FieldModifier="public" Text="" VerticalAlignment="Top" Width="120"/>
             <Label Content="Категория ТС" HorizontalAlignment="Left" Margin="25,229,0,0" VerticalAlignment="Top"/>
             <TextBox x:Name="TBCategory" HorizontalAlignment="Left" Height="23" Margin="232,232,0,0" TextWrapping="Wrap" x:FieldModifier="public" Text="" VerticalAlignment="Top" Width="120"/>
+            <Button x:Name="ButtonSave" Content="Сохранить" HorizontalAlignment="Left" Margin="36,272,0,0" VerticalAlignment="Top" Width="75" IsDefault="True" Click="ButtonSave_Click"/>
+            <DataGrid x:Name="DataGridCardDriver"  HorizontalAlignment="Left" Height="208" Margin="360,77,0,0" VerticalAlignment="Top" Width="407"/>
         </Grid>
 
     </Grid>

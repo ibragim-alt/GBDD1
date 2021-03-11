@@ -16,7 +16,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="lastname" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="middlename" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -37,8 +37,8 @@
             <PropertyRef Name="licenceNum" />
           </Key>
           <Property Name="idDriver" Type="int" Nullable="false" />
-          <Property Name="licence date" Type="date" />
-          <Property Name="expire date" Type="date" />
+          <Property Name="licenceDate" Type="date" />
+          <Property Name="expireDate" Type="date" />
           <Property Name="categories" Type="nvarchar" MaxLength="50" />
           <Property Name="licenceNum" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
@@ -180,14 +180,15 @@
           <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="photo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="descreption" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="licence" Relationship="GIBDD.FK_licence_Drivers" FromRole="Drivers" ToRole="licence" />
         </EntityType>
         <EntityType Name="licence">
           <Key>
             <PropertyRef Name="licenceNum" />
           </Key>
           <Property Name="idDriver" Type="Int32" Nullable="false" />
-          <Property Name="licence_date" Type="DateTime" Precision="0" />
-          <Property Name="expire_date" Type="DateTime" Precision="0" />
+          <Property Name="licenceDate" Type="DateTime" Precision="0" />
+          <Property Name="expireDate" Type="DateTime" Precision="0" />
           <Property Name="categories" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="licenceNum" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Drivers" Relationship="GIBDD.FK_licence_Drivers" FromRole="licence" ToRole="Drivers" />
@@ -268,8 +269,8 @@
               <MappingFragment StoreEntitySet="licence">
                 <ScalarProperty Name="licenceNum" ColumnName="licenceNum" />
                 <ScalarProperty Name="categories" ColumnName="categories" />
-                <ScalarProperty Name="expire_date" ColumnName="expire date" />
-                <ScalarProperty Name="licence_date" ColumnName="licence date" />
+                <ScalarProperty Name="expireDate" ColumnName="expireDate" />
+                <ScalarProperty Name="licenceDate" ColumnName="licenceDate" />
                 <ScalarProperty Name="idDriver" ColumnName="idDriver" />
               </MappingFragment>
             </EntityTypeMapping>

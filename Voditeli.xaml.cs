@@ -115,7 +115,7 @@ namespace WpfApp2
                         int id = int.Parse((DataGridVod.SelectedCells[0].Column.GetCellContent(index) as TextBlock).Text);
 
                         CardDriver card = new CardDriver();
-                        MakeVod make = new MakeVod();
+                        //MakeVod make = new MakeVod();
 
                         using (GIBDDContainer db = new GIBDDContainer())
 
@@ -128,22 +128,26 @@ namespace WpfApp2
                             card.TBSurname.Text = drivers.lastname;
                             card.TBMiddleName.Text = drivers.middlename;
                             
-                            card.TBDateIssue.Text = licence.licence_date.ToString();
-                            card.TBDateExpire.Text = licence.expire_date.ToString();
+                            card.TBDateIssue.Text = licence.licenceDate.ToString();
+                            card.TBDateExpire.Text = licence.expireDate.ToString();
                             card.TBCategory.Text = licence.categories;
-                            
-                            
-                           
-                            
+                            card.TBLifeAdress.Text = drivers.addressLife;
 
-                            // MessageBox.Show(make.ShowDialog().HasValue.ToString());
+
+
+
+
+                            //MessageBox.Show(.ShowDialog().HasValue.ToString());
                             if (!card.ShowDialog().HasValue) return;
 
                             drivers.name = card.TBName.Text;
                             drivers.lastname = card.TBSurname.Text;
                             drivers.middlename = card.TBMiddleName.Text;
-                            licence.licence_date = int.Parse(card.TBDateIssue.Text);
-                            
+                            licence.licenceDate = DateTime.Parse(card.TBDateIssue.Text);
+                            licence.expireDate = DateTime.Parse(card.TBDateExpire.Text);
+                            licence.categories = card.TBCategory.Text;
+                            drivers.addressLife = card.TBLifeAdress.Text;
+
 
 
                             db.SaveChanges();
@@ -155,5 +159,6 @@ namespace WpfApp2
                 }
             }
         }
+
     }
 }

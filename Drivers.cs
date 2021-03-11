@@ -14,6 +14,12 @@ namespace WpfApp2
     
     public partial class Drivers
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Drivers()
+        {
+            this.licence = new HashSet<licence>();
+        }
+    
         public int Id { get; set; }
         public string name { get; set; }
         public string lastname { get; set; }
@@ -29,5 +35,8 @@ namespace WpfApp2
         public string email { get; set; }
         public string photo { get; set; }
         public string descreption { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<licence> licence { get; set; }
     }
 }

@@ -23,8 +23,26 @@ namespace WpfApp2
         public CardDriver()
         {
             InitializeComponent();
+            FillTable();
         }
 
-        
+        private void ButtonSave_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void FillTable()
+        {
+            licences.Clear();
+            using (GIBDDContainer db = new GIBDDContainer())
+            {
+                foreach (licence u in db.licence)
+
+                {
+                    licences.Add(u);
+                }
+
+                DataGridCardDriver.ItemsSource = licences;
+            }
+        }
     }
 }
