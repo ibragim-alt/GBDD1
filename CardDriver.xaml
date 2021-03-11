@@ -31,8 +31,8 @@
             <TextBox x:Name="TBLifeAdress" HorizontalAlignment="Left" Height="23" Margin="232,202,0,0" TextWrapping="Wrap" x:FieldModifier="public" Text="" VerticalAlignment="Top" Width="120"/>
             <Label Content="Категория ТС" HorizontalAlignment="Left" Margin="25,229,0,0" VerticalAlignment="Top"/>
             <TextBox x:Name="TBCategory" HorizontalAlignment="Left" Height="23" Margin="232,232,0,0" TextWrapping="Wrap" x:FieldModifier="public" Text="" VerticalAlignment="Top" Width="120"/>
-            <Button x:Name="ButtonSave" Content="Сохранить" HorizontalAlignment="Left" Margin="36,272,0,0" VerticalAlignment="Top" Width="75" IsDefault="True" Click="ButtonSave_Click"/>
-            <DataGrid x:Name="DataGridCardDriver"  HorizontalAlignment="Left" Height="208" Margin="360,77,0,0" VerticalAlignment="Top" Width="407"/>
+            <Button x:Name="ButtonSave" x:FieldModifier="public" Content="Сохранить" HorizontalAlignment="Left" Margin="36,272,0,0" VerticalAlignment="Top" Width="75" IsDefault="True" Click="ButtonSave_Click"/>
+            <DataGrid x:Name="DataGridCardDriver" x:FieldModifier="public"  HorizontalAlignment="Left" Height="208" Margin="360,77,0,0" VerticalAlignment="Top" Width="407"/>
         </Grid>
 
     </Grid>

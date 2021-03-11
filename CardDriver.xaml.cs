@@ -19,30 +19,18 @@ namespace WpfApp2
     /// </summary>
     public partial class CardDriver : Window
     {
-        List<licence> licences = new List<licence>();
+        //List<licence> licences = new List<licence>();
         public CardDriver()
         {
             InitializeComponent();
-            FillTable();
+            
         }
-
+        public int id;
         private void ButtonSave_Click(object sender, RoutedEventArgs e)
         {
 
         }
-        private void FillTable()
-        {
-            licences.Clear();
-            using (GIBDDContainer db = new GIBDDContainer())
-            {
-                foreach (licence u in db.licence)
-
-                {
-                    licences.Add(u);
-                }
-
-                DataGridCardDriver.ItemsSource = licences;
-            }
-        }
+        
+        
     }
 }

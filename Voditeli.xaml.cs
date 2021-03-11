@@ -133,6 +133,9 @@ namespace WpfApp2
                             card.TBCategory.Text = licence.categories;
                             card.TBLifeAdress.Text = drivers.addressLife;
 
+                            var licences = db.licence.Where(p => p.idDriver == id).ToList();
+                            card.DataGridCardDriver.ItemsSource = licences;
+
 
 
 
