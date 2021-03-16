@@ -12,33 +12,17 @@ namespace WpfApp2
     using System;
     using System.Collections.Generic;
     
-    public partial class Drivers
+    public partial class Manufacture
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Drivers()
+        public Manufacture()
         {
-            this.licence = new HashSet<licence>();
             this.Transports = new HashSet<Transports>();
         }
     
-        public int Id { get; set; }
-        public string name { get; set; }
-        public string lastname { get; set; }
-        public string middlename { get; set; }
-        public int passportSerial { get; set; }
-        public int passportNumber { get; set; }
-        public int postCode { get; set; }
-        public string address { get; set; }
-        public string addressLife { get; set; }
-        public string company { get; set; }
-        public string jobname { get; set; }
-        public string phone { get; set; }
-        public string email { get; set; }
-        public string photo { get; set; }
-        public string descreption { get; set; }
+        public int ID_Manuf { get; set; }
+        public string Name { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<licence> licence { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Transports> Transports { get; set; }
     }

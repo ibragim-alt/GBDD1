@@ -12,12 +12,18 @@ namespace WpfApp2
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class Transports
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public string VIN { get; set; }
+        public Nullable<int> ID_Drivers { get; set; }
+        public Nullable<int> Manuf { get; set; }
+        public Nullable<int> Color { get; set; }
+        public Nullable<int> Engine_Type { get; set; }
+        public string TypeOfDrive { get; set; }
+    
+        public virtual ColorCars ColorCars { get; set; }
+        public virtual Drivers Drivers { get; set; }
+        public virtual EngineType EngineType { get; set; }
+        public virtual Manufacture Manufacture { get; set; }
     }
 }

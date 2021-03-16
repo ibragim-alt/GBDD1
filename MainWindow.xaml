@@ -8,11 +8,11 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid HorizontalAlignment="Left" Height="337" VerticalAlignment="Top" Width="790" Background="#FFB5D5CA" Margin="0,80,0,0">
-            <TextBox x:Name="TextBoxLogin" HorizontalAlignment="Left" Height="48" Margin="274,72,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="276"/>
+            <TextBox x:Name="TextBoxLogin" HorizontalAlignment="Left" Height="48" Margin="274,72,0,0" TextWrapping="Wrap" Text="inspector" VerticalAlignment="Top" Width="276"/>
             <Label Content="Логин" HorizontalAlignment="Left" Margin="62,64,0,0" VerticalAlignment="Top" Height="61" Width="117" FontSize="36"/>
             <Label Content="Пароль" HorizontalAlignment="Left" Margin="61,167,0,0" VerticalAlignment="Top" Height="59" Width="135" FontSize="36"/>
             <Button x:Name="ButtonOk" Content="OK" HorizontalAlignment="Left" Margin="258,256,0,0" VerticalAlignment="Top" Width="198" Height="56" FontSize="36" Click="ButtonOk_Click"/>
-            <PasswordBox x:Name="PasswordBoxPass" HorizontalAlignment="Left" Margin="280,170,0,0" VerticalAlignment="Top" Height="47" Width="268"/>
+            <PasswordBox x:Name="PasswordBoxPass" Password="inspector" HorizontalAlignment="Left" Margin="280,170,0,0" VerticalAlignment="Top" Height="47" Width="268"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="791" Margin="0,1,0,0" Background="#FFE0A9AF">
             <Grid.RowDefinitions>

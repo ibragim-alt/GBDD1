@@ -64,6 +64,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddTrans.xaml.cs">
+      <DependentUpon>AddTrans.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddVoditel.xaml.cs">
       <DependentUpon>AddVoditel.xaml</DependentUpon>
     </Compile>
@@ -73,16 +76,25 @@
     <Compile Include="CodeSubj.cs">
       <DependentUpon>GIBDD.tt</DependentUpon>
     </Compile>
+    <Compile Include="ColorCars.cs">
+      <DependentUpon>GIBDD.tt</DependentUpon>
+    </Compile>
     <Compile Include="Drivers.cs">
+      <DependentUpon>GIBDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EngineType.cs">
       <DependentUpon>GIBDD.tt</DependentUpon>
     </Compile>
     <Compile Include="licence.cs">
       <DependentUpon>GIBDD.tt</DependentUpon>
     </Compile>
+    <Compile Include="Manufacture.cs">
+      <DependentUpon>GIBDD.tt</DependentUpon>
+    </Compile>
     <Compile Include="Subject.cs">
       <DependentUpon>GIBDD.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagrams.cs">
+    <Compile Include="Transports.cs">
       <DependentUpon>GIBDD.tt</DependentUpon>
     </Compile>
     <Compile Include="WinLicence.xaml.cs">
@@ -109,6 +121,13 @@
     <Compile Include="Voditeli.xaml.cs">
       <DependentUpon>Voditeli.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WinTrans.xaml.cs">
+      <DependentUpon>WinTrans.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AddTrans.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AddVoditel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -138,6 +157,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Voditeli.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinTrans.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

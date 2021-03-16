@@ -5,13 +5,20 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="b7e465b9b51b41ce876c04f510fd40a4" Name="Diagram1" >
-        <EntityTypeShape EntityType="GIBDD.CodeSubj" Width="1.5" PointX="3" PointY="1.25" />
-        <EntityTypeShape EntityType="GIBDD.Subject" Width="1.5" PointX="0.75" PointY="0.875" />
-        <EntityTypeShape EntityType="GIBDD.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="GIBDD.CodeSubj" Width="1.5" PointX="8" PointY="1.25" />
+        <EntityTypeShape EntityType="GIBDD.ColorCars" Width="1.5" PointX="0.75" PointY="12.5" />
+        <EntityTypeShape EntityType="GIBDD.Drivers" Width="1.5" PointX="0.75" PointY="1.875" />
+        <EntityTypeShape EntityType="GIBDD.EngineType" Width="1.5" PointX="0.75" PointY="7.625" />
+        <EntityTypeShape EntityType="GIBDD.licence" Width="1.5" PointX="3" PointY="6.625" />
+        <EntityTypeShape EntityType="GIBDD.Manufacture" Width="1.5" PointX="0.75" PointY="10.125" />
+        <EntityTypeShape EntityType="GIBDD.Subject" Width="1.5" PointX="5.75" PointY="0.875" />
+        <EntityTypeShape EntityType="GIBDD.Transports" Width="1.5" PointX="3" PointY="2.625" />
         <AssociationConnector Association="GIBDD.FK_CodeSubj_Subject" />
-        <EntityTypeShape EntityType="GIBDD.Drivers" Width="1.5" PointX="3.375" PointY="4" />
-        <EntityTypeShape EntityType="GIBDD.licence" Width="1.5" PointX="5.625" PointY="5" />
+        <AssociationConnector Association="GIBDD.FK_Transports_ColorCars" />
         <AssociationConnector Association="GIBDD.FK_licence_Drivers" />
+        <AssociationConnector Association="GIBDD.FK_Transports_Drivers" />
+        <AssociationConnector Association="GIBDD.FK_Transports_EngineType" />
+        <AssociationConnector Association="GIBDD.FK_Transports_Manufacture" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

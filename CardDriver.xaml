@@ -34,6 +34,7 @@
             <Button x:Name="ButtonSave" x:FieldModifier="public" Content="Сохранить" HorizontalAlignment="Left" Margin="36,272,0,0" VerticalAlignment="Top" Width="75" IsDefault="True" Click="ButtonSave_Click"/>
             <DataGrid x:Name="DataGridCardDriver" x:FieldModifier="public"  HorizontalAlignment="Left" Height="208" Margin="360,77,0,0" VerticalAlignment="Top" Width="407"/>
         </Grid>
+        <Image Margin="5,4,706,333" Source="gibdd_logo (1).png" Stretch="Fill"/>
 
     </Grid>
 </Window>

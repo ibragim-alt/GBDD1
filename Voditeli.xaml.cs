@@ -21,6 +21,7 @@ namespace WpfApp2
     public partial class Voditeli : Window
     {
         List<Drivers> drivers = new List<Drivers>();
+        List<Transports> transports = new List<Transports>();
         public Voditeli()
         {
             InitializeComponent();
@@ -51,7 +52,7 @@ namespace WpfApp2
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            {
+            
                 if (DataGridVod.Items.Count > 0)
                 {
                     var index = DataGridVod.SelectedItem;
@@ -101,12 +102,12 @@ namespace WpfApp2
                     }
 
                 }
-            }
+            
         }
 
         private void ButtonCarta_Click(object sender, RoutedEventArgs e)
         {
-            {
+            
                 if (DataGridVod.Items.Count > 0)
                 {
                     var index = DataGridVod.SelectedItem;
@@ -160,8 +161,41 @@ namespace WpfApp2
                     }
 
                 }
-            }
+            
         }
 
+        private void ButtonTS_Click(object sender, RoutedEventArgs e)
+        {
+            var index = DataGridVod.SelectedItem;
+            WinTrans winTrans = new WinTrans();
+            if (index ==null)
+            {
+                winTrans.Show();
+                this.Hide();
+                using (GIBDDContainer db = new GIBDDContainer())
+                {
+                    foreach (Transports t in db.Transports)
+                        transports.Add(t);
+                    winTrans.DGTrans.ItemsSource = db.Transports.Local.ToBindingList();
+                }
+            }
+            else 
+            {
+              
+                int id = int.Parse((DataGridVod.SelectedCells[0].Column.GetCellContent(index) as TextBlock).Text);
+               
+                using (GIBDDContainer db = new GIBDDContainer())
+                {
+                    var transport = db.Transports.Where(p => p.ID_Drivers == id).ToList();
+                    
+                    winTrans.DGTrans.ItemsSource = transport;
+                      winTrans.Show();
+                   
+                this.Hide();
+                }
+            }
+            
+
+        }
     }
 }
