@@ -24,7 +24,7 @@
             <Label Content="Email*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="436,136,0,0"/>
             <Label Content="Фотография*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="442,157,0,0"/>
             <Label Content="Замечания" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="597,157,0,0"/>
-            <TextBox x:Name="TextBoxSurname" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="186,48,0,0"/>
+            <TextBox x:Name="TextBoxSurname" x:FieldModifier="public" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="186,48,0,0"/>
             <TextBox x:Name="TextBoxName"  HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="185,82,0,0"/>
             <TextBox x:Name="TextBoxMiddleName" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="186,116,0,0"/>
             <TextBox x:Name="TextBoxPasSeria" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="83" Margin="18,179,0,0"/>

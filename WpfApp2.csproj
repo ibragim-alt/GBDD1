@@ -73,6 +73,9 @@
     <Compile Include="CardDriver.xaml.cs">
       <DependentUpon>CardDriver.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CardVod2.xaml.cs">
+      <DependentUpon>CardVod2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CodeSubj.cs">
       <DependentUpon>GIBDD.tt</DependentUpon>
     </Compile>
@@ -133,6 +136,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CardDriver.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CardVod2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

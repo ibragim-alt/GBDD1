@@ -30,7 +30,12 @@ namespace WpfApp2
         {
 
         }
-        
-        
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            CardVod2 cardVod2 = new CardVod2();
+            cardVod2.Show();
+            this.Hide();
+        }
     }
 }

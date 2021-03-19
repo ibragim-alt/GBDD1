@@ -28,110 +28,63 @@ namespace WpfApp2
             InitializeComponent();
 
         }
-        public string path;
+        
 
         private void ButtonAdd_Click(object sender, RoutedEventArgs e)
         {
-
-            if (TBVIn.Text.Length != 0)
+            using (GIBDDContainer db = new GIBDDContainer())
             {
-                if (TBMark.Text.Length != 0)
+                if (TBDriver.Text.Length !=0)
                 {
-                    if (TBModel.Text.Length != 0)
+                    string[] fols = TBDriver.Text.Split();
+                    string firstname = fols[1];
+                    string lastname = fols[0];
+                    string middlename = fols[2];
+                    Drivers drivers1 = db.Drivers.FirstOrDefault(p => p.name == firstname && p.lastname == lastname && p.middlename == middlename);
+                    if(drivers1 !=null)
                     {
-                        if (TBTypeTs.Text.Length != 0)
+                        if (TBVIn.Text.Length == 17 && TBMark.Text.Length !=0 && TBNumberColor.Text.Length !=0 && TBTypeEngine.Text.Length !=0 && TBTypeTs.Text.Length !=0 && TBModel.Text.Length !=0 && TBdateAuto.Text.Length !=0 && TBWeight.Text.Length !=0)
                         {
-                            if (TBCategory.Text.Length != 0)
-                            {
-                                if (TBdateAuto.Text.Length != 0)
-                                {
-                                    if (TBNumberColor.Text.Length != 0)
-                                    {
-                                        if (TBWeight.Text.Length != 0)
-                                        {
-                                            if (TBTypeEngine.Text.Length != 0)
-                                            {
-                                                if (TBWeightLbs.Text.Length != 0)
-                                                {
-                                                    if (TBTypePrivod.Text.Length != 0)
-                                                    {
-                                                        if (path != null)
-                                                        {
-                                                            using (GIBDDContainer db = new GIBDDContainer())
-                                                            {
-                                                                Transports tran = new Transports();
+                            Transports tran = new Transports();
+                            Manufacture manufacture = db.Manufacture.FirstOrDefault(c => c.Name == TBMark.Text);
+                            tran.Manuf = manufacture.ID_Manuf;
+                            ColorCars color = db.ColorCars.FirstOrDefault(c => c.ColorName == TBNumberColor.Text);
+                            tran.Color = color.ColorNum;
+                            EngineType engine = db.EngineType.FirstOrDefault(c => c.NameRu == TBTypeEngine.Text);
+                            tran.Engine_Type = engine.Id_Engine;
+                            tran.ID_Drivers = drivers1.Id;
 
-                                                                tran.VIN = TBVIn.Text;
-                                                                tran.ID_Drivers = int.Parse(TBDriver.Text);
-                                                                tran.Manuf = int.Parse(TBMark.Text);
-                                                                tran.Color = int.Parse(TBNumberColor.Text);
-                                                                tran.Engine_Type = int.Parse(TBTypeEngine.Text);
-                                                                tran.TypeOfDrive = TBTypePrivod.Text;
-                                                                db.Transports.Add(tran);
-                                                                db.SaveChanges();
-
-                                                            }
-                                                            WinTrans wTran = new WinTrans();
-                                                            wTran.Show();
-                                                            this.Hide();
-                                                        }
-
-                                                    }
-                                                    else
-                                                    {
-                                                        MessageBox.Show("Не заполнено поле Тип привода");
-                                                    }
-                                                }
-                                                else
-                                                {
-                                                    MessageBox.Show("Не заполнено поле Вес автомобиля(кг)");
-                                                }
-                                            }
-                                            else
-                                            {
-                                                MessageBox.Show("Не заполнено поле Тип двигателя");
-                                            }
-                                        }
-                                        else
-                                        {
-                                            MessageBox.Show("Не заполнено поле Вес автомобиля");
-                                        }
-
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("Не заполнено поле Номер цвета");
-                                    }
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Не заполнено поле год выпуска ");
-                                }
-                            }
-                            else
-                            {
-                                MessageBox.Show("Не заполнено поле категория ТС");
-                            }
+ 
+                            tran.Manuf = int.Parse(TBMark.Text);
+                            
+                            db.Transports.Add(tran);
+                            db.SaveChanges();
+                            WinTrans winTrans = new WinTrans();
+                            winTrans.Show();
+                            this.Close();
                         }
-                        else
-                        {
-                            MessageBox.Show("Не заполнено поле Тип ТС");
-                        }
+                       
                     }
                     else
                     {
-                        MessageBox.Show("Не заполнено поле Модель");
+                        MessageBox.Show("Водитель не найден");
+                        AddVoditel addVoditel = new AddVoditel();
+                        addVoditel.TextBoxSurname.Text = lastname;
+                        addVoditel.Show();
+
                     }
+
                 }
-                else
-                {
-                    MessageBox.Show("Не заполнено поле Марка");
-                }
+                 else
+                        {
+                            MessageBox.Show("Введите владельца");
+                        }
+
             }
-            else
-            {
-                MessageBox.Show("Не заполнено поле VIN");
-            }
-        }            
-     }       
+           
+        }
+
+
+    }            
+            
 }   
