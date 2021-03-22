@@ -19,6 +19,7 @@ namespace WpfApp2
         {
             this.licence = new HashSet<licence>();
             this.Transports = new HashSet<Transports>();
+            this.Dtp = new HashSet<Dtp>();
         }
     
         public int Id { get; set; }
@@ -41,5 +42,7 @@ namespace WpfApp2
         public virtual ICollection<licence> licence { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Transports> Transports { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Dtp> Dtp { get; set; }
     }
 }

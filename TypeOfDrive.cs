@@ -12,26 +12,18 @@ namespace WpfApp2
     using System;
     using System.Collections.Generic;
     
-    public partial class licence
+    public partial class TypeOfDrive
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public licence()
+        public TypeOfDrive()
         {
-            this.Dtp = new HashSet<Dtp>();
+            this.Transports = new HashSet<Transports>();
         }
     
-        public int idDriver { get; set; }
-        public Nullable<System.DateTime> licenceDate { get; set; }
-        public Nullable<System.DateTime> expireDate { get; set; }
-        public string categories { get; set; }
-        public string licenceNum { get; set; }
-        public string Vidano { get; set; }
-        public string Surname { get; set; }
-        public string Name { get; set; }
-        public string City { get; set; }
+        public int IDTypeOfDrive { get; set; }
+        public string TypeDrive { get; set; }
     
-        public virtual Drivers Drivers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Dtp> Dtp { get; set; }
+        public virtual ICollection<Transports> Transports { get; set; }
     }
 }

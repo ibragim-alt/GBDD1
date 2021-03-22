@@ -47,7 +47,7 @@ namespace WpfApp2
                         {
                             Transports tran = new Transports();
                             Manufacture manufacture = db.Manufacture.FirstOrDefault(c => c.Name == TBMark.Text);
-                            tran.Manuf = manufacture.ID_Manuf;
+                            tran.Manuf = manufacture.ID_manuf;
                             ColorCars color = db.ColorCars.FirstOrDefault(c => c.ColorName == TBNumberColor.Text);
                             tran.Color = color.ColorNum;
                             EngineType engine = db.EngineType.FirstOrDefault(c => c.NameRu == TBTypeEngine.Text);

@@ -32,6 +32,10 @@ namespace WpfApp2
         public virtual DbSet<licence> licence { get; set; }
         public virtual DbSet<Manufacture> Manufacture { get; set; }
         public virtual DbSet<Subject> Subject { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Transports> Transports { get; set; }
+        public virtual DbSet<TypeOfDrive> TypeOfDrive { get; set; }
+        public virtual DbSet<Dtp> Dtp { get; set; }
+        public virtual DbSet<PlaceFines> PlaceFines { get; set; }
     }
 }

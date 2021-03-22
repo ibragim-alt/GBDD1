@@ -12,25 +12,20 @@ namespace WpfApp2
     using System;
     using System.Collections.Generic;
     
-    public partial class licence
+    public partial class PlaceFines
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public licence()
+        public PlaceFines()
         {
             this.Dtp = new HashSet<Dtp>();
         }
     
-        public int idDriver { get; set; }
-        public Nullable<System.DateTime> licenceDate { get; set; }
-        public Nullable<System.DateTime> expireDate { get; set; }
-        public string categories { get; set; }
-        public string licenceNum { get; set; }
-        public string Vidano { get; set; }
-        public string Surname { get; set; }
-        public string Name { get; set; }
-        public string City { get; set; }
+        public int IdPlace { get; set; }
+        public string Street { get; set; }
+        public string House { get; set; }
+        public string RowRoad { get; set; }
+        public string LineMove { get; set; }
     
-        public virtual Drivers Drivers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Dtp> Dtp { get; set; }
     }

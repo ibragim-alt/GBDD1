@@ -12,21 +12,24 @@ namespace WpfApp2
     using System;
     using System.Collections.Generic;
     
-    public partial class Transports
+    public partial class Dtp
     {
-        public string VIN { get; set; }
-        public Nullable<int> ID_Drivers { get; set; }
-        public Nullable<int> Manuf { get; set; }
-        public Nullable<int> Color { get; set; }
-        public int Engine_Type { get; set; }
-        public Nullable<int> TypeOfDrive { get; set; }
-        public Nullable<int> Year { get; set; }
-        public Nullable<int> Weight { get; set; }
+        public System.DateTime Date { get; set; }
+        public string Time { get; set; }
+        public Nullable<int> IdFines { get; set; }
+        public Nullable<int> IdDrivers { get; set; }
+        public string Licence { get; set; }
+        public string VinNumber { get; set; }
+        public Nullable<int> NumberREG { get; set; }
+        public string OtherObjects { get; set; }
+        public string Victim { get; set; }
+        public string Description { get; set; }
+        public string Photo1 { get; set; }
+        public string Photo2 { get; set; }
+        public string Photo3 { get; set; }
     
-        public virtual ColorCars ColorCars { get; set; }
         public virtual Drivers Drivers { get; set; }
-        public virtual EngineType EngineType { get; set; }
-        public virtual Manufacture Manufacture { get; set; }
-        public virtual TypeOfDrive TypeOfDrive1 { get; set; }
+        public virtual licence licence1 { get; set; }
+        public virtual PlaceFines PlaceFines { get; set; }
     }
 }

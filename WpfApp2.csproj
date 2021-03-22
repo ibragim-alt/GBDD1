@@ -85,6 +85,9 @@
     <Compile Include="Drivers.cs">
       <DependentUpon>GIBDD.tt</DependentUpon>
     </Compile>
+    <Compile Include="Dtp.cs">
+      <DependentUpon>GIBDD.tt</DependentUpon>
+    </Compile>
     <Compile Include="EngineType.cs">
       <DependentUpon>GIBDD.tt</DependentUpon>
     </Compile>
@@ -94,14 +97,23 @@
     <Compile Include="Manufacture.cs">
       <DependentUpon>GIBDD.tt</DependentUpon>
     </Compile>
+    <Compile Include="PlaceFines.cs">
+      <DependentUpon>GIBDD.tt</DependentUpon>
+    </Compile>
     <Compile Include="Subject.cs">
+      <DependentUpon>GIBDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
       <DependentUpon>GIBDD.tt</DependentUpon>
     </Compile>
     <Compile Include="Transports.cs">
       <DependentUpon>GIBDD.tt</DependentUpon>
     </Compile>
-    <Compile Include="WinLicence.xaml.cs">
-      <DependentUpon>WinLicence.xaml</DependentUpon>
+    <Compile Include="TypeOfDrive.cs">
+      <DependentUpon>GIBDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WinDTP.xaml.cs">
+      <DependentUpon>WinDTP.xaml</DependentUpon>
     </Compile>
     <Compile Include="GIBDD.Context.cs">
       <AutoGen>True</AutoGen>
@@ -143,7 +155,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WinLicence.xaml">
+    <Page Include="WinDTP.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

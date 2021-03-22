@@ -11,23 +11,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using System.Data.Entity;
 
 namespace WpfApp2
 {
     /// <summary>
-    /// Логика взаимодействия для Carta.xaml
+    /// Логика взаимодействия для WinDTP.xaml
     /// </summary>
-    public partial class Carta : Window
+    public partial class WinDTP : Window
     {
-        public Carta()
+        public WinDTP()
         {
             InitializeComponent();
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }
