@@ -33,8 +33,9 @@ namespace WpfApp2
         {
             licence lic = new licence();
             using (GIBDDContainer db = new GIBDDContainer())
-            {                       
-                  lic.licenceDate =DateTime.Parse(TBDateIssue.Text);
+            {  
+                
+                lic.licenceDate = DateTime.Parse(TBDateIssue.Text);
                 lic.idDriver = id;
                 lic.expireDate = DateTime.Parse(TBDateExpire.Text);
                 lic.categories = TBCategory.Text;
@@ -44,8 +45,8 @@ namespace WpfApp2
 
 
             }
-                    Voditeli NewGIBDD = new Voditeli();
-                    NewGIBDD.Show();
+                    CardDriver card = new CardDriver();
+                    card.Show();
                     this.Hide();
                 
                                       

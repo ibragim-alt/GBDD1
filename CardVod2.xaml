@@ -17,7 +17,7 @@
             <Label Content="Дата рождения, адрес проживания" HorizontalAlignment="Left" Margin="24,79,0,0" VerticalAlignment="Top"/>
             <TextBox x:Name="TBDate" HorizontalAlignment="Left" Height="23" Margin="230,79,0,0" x:FieldModifier="public" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
             <Label Content="Дата выдачи" HorizontalAlignment="Left" Margin="25,111,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="TBDateIssue" HorizontalAlignment="Left" Height="23" Margin="230,113,0,0" x:FieldModifier="public" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="TBDateIssue" HorizontalAlignment="Left" Height="23" Margin="350,295,0,0" x:FieldModifier="public" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
             <Label Content="Дата истечения срока" HorizontalAlignment="Left" Margin="350,45,0,0" VerticalAlignment="Top"/>
             <TextBox x:Name="TBDateExpire" HorizontalAlignment="Left" Height="23" Margin="484,46,0,0" x:FieldModifier="public" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.657,0.238"/>
             <Label Content="Орган выдавший" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,144,0,0"/>
@@ -27,9 +27,16 @@
             <Label Content="Адрес проживания" HorizontalAlignment="Left" Margin="25,201,0,0" VerticalAlignment="Top"/>
             <TextBox x:Name="TBLifeAdress" HorizontalAlignment="Left" Height="23" Margin="232,202,0,0" TextWrapping="Wrap" x:FieldModifier="public" Text="" VerticalAlignment="Top" Width="120"/>
             <Label Content="Категория ТС" HorizontalAlignment="Left" Margin="25,229,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="TBCategory" HorizontalAlignment="Left" Height="23" Margin="232,232,0,0" TextWrapping="Wrap" x:FieldModifier="public" Text="" VerticalAlignment="Top" Width="120"/>
             <Button x:Name="ButtonAdd" x:FieldModifier="public" Content="Добавить" HorizontalAlignment="Left" Margin="36,272,0,0" VerticalAlignment="Top" Width="75" IsDefault="True" Click="ButtonSave_Click"/>
             <DataGrid x:Name="DataGridCardDriver" x:FieldModifier="public"  HorizontalAlignment="Left" Height="208" Margin="360,77,0,0" VerticalAlignment="Top" Width="407"/>
+            <ComboBox x:Name="TBCategory" HorizontalAlignment="Left" Margin="232,232,0,0" VerticalAlignment="Top" Width="120">
+                <ComboBoxItem Content="A"/>
+                <ComboBoxItem Content="B"/>
+                <ComboBoxItem Content="C"/>
+                <ComboBoxItem Content="D"/>
+                <ComboBoxItem Content="D1E"/>
+            </ComboBox>
+            <DatePicker HorizontalAlignment="Left" Margin="235,114,0,0" VerticalAlignment="Top" Width="114"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="86" Margin="3,2,0,0" VerticalAlignment="Top" Width="785" Background="#FFE0A9AF">
             <Label Content="Новое водительское удостоверение" HorizontalAlignment="Left" Margin="145,10,0,0" VerticalAlignment="Top" Height="72" Width="526" FontSize="24"/>
