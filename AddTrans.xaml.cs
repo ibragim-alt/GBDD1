@@ -70,6 +70,7 @@ namespace WpfApp2
                         MessageBox.Show("Водитель не найден");
                         AddVoditel addVoditel = new AddVoditel();
                         addVoditel.TextBoxSurname.Text = lastname;
+
                         addVoditel.Show();
 
                     }

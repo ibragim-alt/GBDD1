@@ -17,6 +17,7 @@
             <Button x:Name="ButtonCreate" Content="Редактировать" HorizontalAlignment="Left" Margin="163,11,0,0" VerticalAlignment="Top" Width="86" Height="28" Click="Button_Click_1"/>
             <Button x:Name="ButtonCarta" Content="ВУ" HorizontalAlignment="Left" Margin="263,10,0,0" VerticalAlignment="Top" Width="84" Height="30" Click="ButtonCarta_Click"/>
             <Button x:Name="ButtonTS" Content="ТС" HorizontalAlignment="Left" Margin="362,11,0,0" VerticalAlignment="Top" Width="80" Height="31" Click="ButtonTS_Click"/>
+            <Button  Content="Список ДТП" HorizontalAlignment="Left" Margin="453,10,0,0" VerticalAlignment="Top" Width="80" Height="34" Click="Button_Click_2"/>
         </Grid>
 
     </Grid>

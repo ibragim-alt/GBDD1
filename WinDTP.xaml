@@ -11,7 +11,7 @@
             <Label Content="Список ДТП" HorizontalAlignment="Left" Margin="256,9,0,0" VerticalAlignment="Top" Height="65" Width="230" FontSize="36"/>
             <Image HorizontalAlignment="Left" Margin="1,3,0,2" Width="79"/>
         </Grid>
-        <DataGrid HorizontalAlignment="Left" Height="242" Margin="2,82,-1,0" VerticalAlignment="Top" Width="791" AlternatingRowBackground="#FFD1EEFC" RowBackground="#FFFFFCD6"/>
+        <DataGrid x:Name="DGdtp" HorizontalAlignment="Left" Height="242" Margin="2,82,-1,0" VerticalAlignment="Top" Width="791" AlternatingRowBackground="#FFD1EEFC" RowBackground="#FFFFFCD6"/>
         <Grid HorizontalAlignment="Left" Height="92" VerticalAlignment="Top" Width="792" Margin="3,325,-3,0" Background="#FFE0A9AF"/>
         <Image Margin="5,6,720,347" Source="gibdd_logo (1).png" Stretch="Fill"/>
 

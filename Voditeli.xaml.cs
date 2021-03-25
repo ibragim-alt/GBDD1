@@ -22,6 +22,7 @@ namespace WpfApp2
     {
         List<Drivers> drivers = new List<Drivers>();
         List<Transports> transports = new List<Transports>();
+        List<Dtp> dtps = new List<Dtp>();
         public Voditeli()
         {
             InitializeComponent();
@@ -197,5 +198,39 @@ namespace WpfApp2
             
 
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            var index = DataGridVod.SelectedItem;
+            WinDTP win = new WinDTP();
+            if (index == null)
+            {
+                win.Show();
+                this.Hide();
+                using (GIBDDContainer db = new GIBDDContainer())
+                {
+                    foreach (Dtp t in db.Dtp)
+                        dtps.Add(t);
+                    win.DGdtp.ItemsSource = db.Dtp.Local.ToBindingList();
+                }
+            }
+            else
+            {
+
+                int id = int.Parse((DataGridVod.SelectedCells[0].Column.GetCellContent(index) as TextBlock).Text);
+
+                using (GIBDDContainer db = new GIBDDContainer())
+                {
+                    var dtp = db.Dtp.Where(p => p.IdDrivers == id).ToList();
+
+                    win.DGdtp.ItemsSource = dtp;
+                    win.Show();
+
+                    this.Hide();
+                }
+            }
+        }
+
+        
     }
 }
