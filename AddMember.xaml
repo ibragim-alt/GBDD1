@@ -1,0 +1,22 @@
+﻿<Window x:Class="WpfApp2.AddMember"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="AddMember" Height="450" Width="800">
+    <Grid>
+        <Label Content="ФИО" HorizontalAlignment="Left" Margin="32,111,0,0" VerticalAlignment="Top" Height="72" Width="187" FontSize="48"/>
+        <Grid HorizontalAlignment="Left" Height="100" Margin="2,1,0,0" VerticalAlignment="Top" Width="790" Background="#FFE0A9AF">
+            <Image HorizontalAlignment="Left" Height="99" Margin="1,1,0,0" VerticalAlignment="Top" Width="104"/>
+            <Image Margin="6,6,689,6" Source="gibdd_logo (1).png" Stretch="Fill"/>
+        </Grid>
+        <TextBox x:Name="TBFio"  HorizontalAlignment="Left" Height="72" Margin="271,112,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="465" FontSize="48"/>
+        <Label Content="Licence" HorizontalAlignment="Left" Margin="30,208,0,0" VerticalAlignment="Top" Height="70" Width="189" FontSize="48"/>
+        <TextBox x:Name="TBLicence" HorizontalAlignment="Left" Height="73" Margin="273,212,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="460"/>
+        <Button Content="OK" HorizontalAlignment="Left" Margin="58,343,0,0" VerticalAlignment="Top" Width="208" Height="45" FontSize="36"/>
+        <Label Content="Добавить участника" HorizontalAlignment="Left" Margin="174,15,0,0" VerticalAlignment="Top" FontSize="48"/>
+
+    </Grid>
+</Window>

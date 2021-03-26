@@ -15,21 +15,13 @@ using System.Windows.Shapes;
 namespace WpfApp2
 {
     /// <summary>
-    /// Логика взаимодействия для WinDTP.xaml
+    /// Логика взаимодействия для AddMember.xaml
     /// </summary>
-    public partial class WinDTP : Window
+    public partial class AddMember : Window
     {
-        public WinDTP()
+        public AddMember()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            AddDTP addDTP = new AddDTP();
-            addDTP.Show();
-            this.Close();
-
         }
     }
 }

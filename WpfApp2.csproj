@@ -64,6 +64,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddDTP.xaml.cs">
+      <DependentUpon>AddDTP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddMember.xaml.cs">
+      <DependentUpon>AddMember.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddTrans.xaml.cs">
       <DependentUpon>AddTrans.xaml</DependentUpon>
     </Compile>
@@ -139,6 +145,14 @@
     <Compile Include="WinTrans.xaml.cs">
       <DependentUpon>WinTrans.xaml</DependentUpon>
     </Compile>
+    <Page Include="AddDTP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddMember.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AddTrans.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
