@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
         Title="AddDTP" Height="450" Width="800">
-    <Grid>
+    <Grid Background="#FFB5D5CA">
         <Grid HorizontalAlignment="Left" Height="52" Margin="2,2,0,0" VerticalAlignment="Top" Width="790" Background="#FFE0A9AF"/>
         <Label Content="Конструктор ДТП" HorizontalAlignment="Left" Margin="311,9,0,0" VerticalAlignment="Top" Width="190" FontSize="20"/>
         <Label Content="Дата" HorizontalAlignment="Left" Margin="25,74,0,0" VerticalAlignment="Top"/>
@@ -46,9 +46,11 @@
         <TextBox x:Name="TBDeath" HorizontalAlignment="Left" Height="23" Margin="333,226,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="63"/>
         <Label Content="Комментарии" HorizontalAlignment="Left" Margin="281,275,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="TBNote" HorizontalAlignment="Left" Height="57" Margin="276,300,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Image HorizontalAlignment="Left" Height="100" Margin="410,77,0,0" VerticalAlignment="Top" Width="100"/>
-        <Image HorizontalAlignment="Left" Height="100" Margin="537,75,0,0" VerticalAlignment="Top" Width="100"/>
-        <Image HorizontalAlignment="Left" Height="100" Margin="666,75,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button Content="Загрузить" HorizontalAlignment="Left" Margin="698,190,0,0" VerticalAlignment="Top" Width="76" Height="34" Click="Button_Click_1"/>
+        <Image x:Name="ImagePhoto" HorizontalAlignment="Left" Height="100" Margin="410,77,0,0" VerticalAlignment="Top" Width="100"/>
+        <Image x:Name="ImagePhoto1" HorizontalAlignment="Left" Height="100" Margin="537,75,0,0" VerticalAlignment="Top" Width="100"/>
+        <Image x:Name="ImagePhoto2" HorizontalAlignment="Left" Height="100" Margin="666,75,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button Content="Загрузить" HorizontalAlignment="Left" Margin="426,193,0,0" VerticalAlignment="Top" Width="76" Height="34" Click="Button_Click_1"/>
+        <Button Content="Загрузить" HorizontalAlignment="Left" Margin="551,192,0,0" VerticalAlignment="Top" Width="75" Height="37" Click="Button_Click_2"/>
+        <Button Content="Загрузить" HorizontalAlignment="Left" Margin="672,191,0,0" VerticalAlignment="Top" Width="83" Height="37" Click="Button_Click_3"/>
     </Grid>
 </Window>

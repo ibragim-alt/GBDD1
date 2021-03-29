@@ -11,7 +11,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
 using System.Data.Entity;
 using Microsoft.Win32;
 using System.Reflection;
@@ -48,7 +47,35 @@ namespace WpfApp2
                 ImagePhoto.Source = new BitmapImage(new Uri(path));
             }
             string path2 = Assembly.GetExecutingAssembly().Location.ToString();
-            File.Copy(path, path2.Substring(0, path2.LastIndexOf("\\")) + "\\photo\\" + path.Substring(path.LastIndexOf("\\") + 1), true);
+            File.Copy(path, path2.Substring(0, path2.LastIndexOf("\\")) + "\\photo1\\" + path.Substring(path.LastIndexOf("\\") + 1), true);
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            var dialog = new OpenFileDialog();
+            dialog.Filter = "Image files (*.JPG, *.PNG) | *.jpg; *.png;";
+            if (dialog.ShowDialog() == true)
+            {
+                path = dialog.FileName;
+                ImagePhoto1.Stretch = Stretch.Uniform;
+                ImagePhoto1.Source = new BitmapImage(new Uri(path));
+            }
+            string path2 = Assembly.GetExecutingAssembly().Location.ToString();
+            File.Copy(path, path2.Substring(0, path2.LastIndexOf("\\")) + "\\photo1\\" + path.Substring(path.LastIndexOf("\\") + 1), true);
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            var dialog = new OpenFileDialog();
+            dialog.Filter = "Image files (*.JPG, *.PNG) | *.jpg; *.png;";
+            if (dialog.ShowDialog() == true)
+            {
+                path = dialog.FileName;
+                ImagePhoto2.Stretch = Stretch.Uniform;
+                ImagePhoto2.Source = new BitmapImage(new Uri(path));
+            }
+            string path2 = Assembly.GetExecutingAssembly().Location.ToString();
+            File.Copy(path, path2.Substring(0, path2.LastIndexOf("\\")) + "\\photo1\\" + path.Substring(path.LastIndexOf("\\") + 1), true);
         }
     }
 }
