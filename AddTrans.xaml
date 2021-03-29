@@ -50,6 +50,7 @@
             <TextBox HorizontalAlignment="Left" Height="23" Margin="478,224,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
             <TextBox x:Name="TBDriver" x:FieldModifier="public"  HorizontalAlignment="Left" Height="23" Margin="477,250,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
             <Button x:Name="ButtonAdd" Content="Добавить" HorizontalAlignment="Left" Margin="305,291,0,0" VerticalAlignment="Top" Width="127" Height="36" Click="ButtonAdd_Click"/>
+            <Button x:Name="ButtonBack" Content="Назад" HorizontalAlignment="Left" Margin="475,291,0,0" VerticalAlignment="Top" Width="100" Height="35" Click="ButtonBack_Click"/>
         </Grid>
         <Image Margin="4,4,717,344" Source="gibdd_logo (1).png" Stretch="Fill"/>
 

@@ -15,6 +15,7 @@ using System.Data.Entity;
 using Microsoft.Win32;
 using System.Reflection;
 using System.IO;
+using VIN_LIB;
 
 namespace WpfApp2
 {
@@ -40,28 +41,34 @@ namespace WpfApp2
                     string firstname = fols[1];
                     string lastname = fols[0];
                     string middlename = fols[2];
+                    Class1 class1 = new Class1();
                     Drivers drivers1 = db.Drivers.FirstOrDefault(p => p.name == firstname && p.lastname == lastname && p.middlename == middlename);
                     if(drivers1 !=null)
-                    {
-                        if (TBVIn.Text.Length == 17 && TBMark.Text.Length !=0 && TBNumberColor.Text.Length !=0 && TBTypeEngine.Text.Length !=0 && TBTypeTs.Text.Length !=0 && TBModel.Text.Length !=0 && TBdateAuto.Text.Length !=0 && TBWeight.Text.Length !=0)
+                    { if (class1.CheckVIN(TBVIn.Text) == true)
                         {
-                            Transports tran = new Transports();
-                            Manufacture manufacture = db.Manufacture.FirstOrDefault(c => c.Name == TBMark.Text);
-                            tran.Manuf = manufacture.ID_manuf;
-                            ColorCars color = db.ColorCars.FirstOrDefault(c => c.ColorName == TBNumberColor.Text);
-                            tran.Color = color.ColorNum;
-                            EngineType engine = db.EngineType.FirstOrDefault(c => c.NameRu == TBTypeEngine.Text);
-                            tran.Engine_Type = engine.Id_Engine;
-                            tran.ID_Drivers = drivers1.Id;
+                            if (TBVIn.Text.Length == 17 && TBMark.Text.Length != 0 && TBNumberColor.Text.Length != 0 && TBTypeEngine.Text.Length != 0 && TBTypeTs.Text.Length != 0 && TBModel.Text.Length != 0 && TBdateAuto.Text.Length != 0 && TBWeight.Text.Length != 0)
+                            {
+                                Transports tran = new Transports();
+                                Manufacture manufacture = db.Manufacture.FirstOrDefault(c => c.Name == TBMark.Text);
+                                tran.Manuf = manufacture.ID_manuf;
+                                ColorCars color = db.ColorCars.FirstOrDefault(c => c.ColorName == TBNumberColor.Text);
+                                tran.Color = color.ColorNum;
+                                EngineType engine = db.EngineType.FirstOrDefault(c => c.NameRu == TBTypeEngine.Text);
+                                tran.Engine_Type = engine.Id_Engine;
+                                tran.ID_Drivers = drivers1.Id;
+                                Transports trans = db.Transports.FirstOrDefault(c => c.VIN == TBVIn.Text);
+                                tran.VIN = trans.VIN;
+                                tran.Weight = int.Parse(TBWeight.Text);
+                                tran.Year = int.Parse(TBdateAuto.Text);
+                                TypeOfDrive typeOfDrive = db.TypeOfDrive.FirstOrDefault(c => c.TypeDrive == TBTypeTs.Text);
+                                tran.TypeOfDrive = typeOfDrive.IDTypeOfDrive;
 
- 
-                            tran.Manuf = int.Parse(TBMark.Text);
-                            
-                            db.Transports.Add(tran);
-                            db.SaveChanges();
-                            WinTrans winTrans = new WinTrans();
-                            winTrans.Show();
-                            this.Close();
+                                db.Transports.Add(tran);
+                                db.SaveChanges();
+                                WinTrans winTrans = new WinTrans();
+                                winTrans.Show();
+                                this.Close();
+                            }
                         }
                        
                     }
@@ -85,7 +92,13 @@ namespace WpfApp2
            
         }
 
+        private void ButtonBack_Click(object sender, RoutedEventArgs e)
+        {
+            Voditeli voditeli = new Voditeli();
+            voditeli.Show();
 
+            this.Hide();
+        }
     }            
             
 }   

@@ -55,6 +55,9 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="VIN_LIB">
+      <HintPath>..\..\библиотека\пз8\VIN_LIB\obj\Debug\VIN_LIB.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
