@@ -76,6 +76,9 @@
     <Compile Include="AddTrans.xaml.cs">
       <DependentUpon>AddTrans.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddTrans1.xaml.cs">
+      <DependentUpon>AddTrans1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddVoditel.xaml.cs">
       <DependentUpon>AddVoditel.xaml</DependentUpon>
     </Compile>
@@ -157,6 +160,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddTrans.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddTrans1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

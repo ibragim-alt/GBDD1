@@ -46,10 +46,10 @@ namespace WpfApp2
                     if(drivers1 !=null)
                     { if (class1.CheckVIN(TBVIn.Text) == true)
                         {
-                            if (TBVIn.Text.Length == 17 && TBMark.Text.Length != 0 && TBNumberColor.Text.Length != 0 && TBTypeEngine.Text.Length != 0 && TBTypeTs.Text.Length != 0 && TBModel.Text.Length != 0 && TBdateAuto.Text.Length != 0 && TBWeight.Text.Length != 0)
+                            if (TBVIn.Text.Length == 17 && CBMark.Text.Length != 0 && TBNumberColor.Text.Length != 0 && TBTypeEngine.Text.Length != 0 && TBTypeTs.Text.Length != 0 && CBModel.Text.Length != 0 && TBdateAuto.Text.Length != 0 && TBWeight.Text.Length != 0)
                             {
                                 Transports tran = new Transports();
-                                Manufacture manufacture = db.Manufacture.FirstOrDefault(c => c.Name == TBMark.Text);
+                                Manufacture manufacture = db.Manufacture.FirstOrDefault(c => c.Name == CBMark.Text);
                                 tran.Manuf = manufacture.ID_manuf;
                                 ColorCars color = db.ColorCars.FirstOrDefault(c => c.ColorName == TBNumberColor.Text);
                                 tran.Color = color.ColorNum;
@@ -68,6 +68,10 @@ namespace WpfApp2
                                 WinTrans winTrans = new WinTrans();
                                 winTrans.Show();
                                 this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Не все данные введены");
                             }
                         }
                        
