@@ -47,16 +47,20 @@
         <EntityType Name="Dtp">
           <Key>
             <PropertyRef Name="Date" />
+            <PropertyRef Name="Time" />
+            <PropertyRef Name="IdDrivers" />
+            <PropertyRef Name="Licence" />
+            <PropertyRef Name="NumberREG" />
           </Key>
           <Property Name="Date" Type="date" Nullable="false" />
-          <Property Name="Time" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="IdFines" Type="int" />
-          <Property Name="IdDrivers" Type="int" />
-          <Property Name="Licence" Type="nvarchar" MaxLength="50" />
-          <Property Name="VinNumber" Type="nvarchar" MaxLength="50" />
-          <Property Name="NumberREG" Type="int" />
+          <Property Name="Time" Type="time" Precision="7" Nullable="false" />
+          <Property Name="IdFines" Type="int" Nullable="false" />
+          <Property Name="IdDrivers" Type="int" Nullable="false" />
+          <Property Name="Licence" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="GosNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NumberREG" Type="int" Nullable="false" />
           <Property Name="OtherObjects" Type="nvarchar" MaxLength="50" />
-          <Property Name="Victim" Type="nvarchar" MaxLength="50" />
+          <Property Name="Victim" Type="int" />
           <Property Name="Description" Type="nvarchar" MaxLength="50" />
           <Property Name="Photo1" Type="nvarchar" MaxLength="50" />
           <Property Name="Photo2" Type="nvarchar" MaxLength="50" />
@@ -97,8 +101,8 @@
           </Key>
           <Property Name="IdPlace" Type="int" Nullable="false" />
           <Property Name="Street" Type="nvarchar" MaxLength="50" />
-          <Property Name="House" Type="nvarchar" MaxLength="50" />
-          <Property Name="RowRoad" Type="nvarchar" MaxLength="50" />
+          <Property Name="House" Type="int" />
+          <Property Name="RowRoad" Type="int" />
           <Property Name="LineMove" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Subject">
@@ -154,7 +158,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Dtp_Drivers">
-          <End Role="Drivers" Type="Self.Drivers" Multiplicity="0..1" />
+          <End Role="Drivers" Type="Self.Drivers" Multiplicity="1" />
           <End Role="Dtp" Type="Self.Dtp" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Drivers">
@@ -166,7 +170,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Dtp_licence">
-          <End Role="licence" Type="Self.licence" Multiplicity="0..1" />
+          <End Role="licence" Type="Self.licence" Multiplicity="1" />
           <End Role="Dtp" Type="Self.Dtp" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="licence">
@@ -178,7 +182,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Dtp_PlaceFines">
-          <End Role="PlaceFines" Type="Self.PlaceFines" Multiplicity="0..1" />
+          <End Role="PlaceFines" Type="Self.PlaceFines" Multiplicity="1" />
           <End Role="Dtp" Type="Self.Dtp" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PlaceFines">
@@ -322,21 +326,27 @@
         <EntityContainer Name="GIBDDContainer" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CodeSubj" EntityType="GIBDD.CodeSubj" />
           <EntitySet Name="ColorCars" EntityType="GIBDD.ColorCars" />
-          <EntitySet Name="Drivers" EntityType="GIBDD.Drivers" />
           <EntitySet Name="EngineType" EntityType="GIBDD.EngineType" />
           <EntitySet Name="licence" EntityType="GIBDD.licence" />
           <EntitySet Name="Manufacture" EntityType="GIBDD.Manufacture" />
           <EntitySet Name="Subject" EntityType="GIBDD.Subject" />
           <EntitySet Name="sysdiagrams" EntityType="GIBDD.sysdiagrams" />
-          <EntitySet Name="Transports" EntityType="GIBDD.Transports" />
           <EntitySet Name="TypeOfDrive" EntityType="GIBDD.TypeOfDrive" />
           <AssociationSet Name="FK_CodeSubj_Subject" Association="GIBDD.FK_CodeSubj_Subject">
             <End Role="Subject" EntitySet="Subject" />
             <End Role="CodeSubj" EntitySet="CodeSubj" />
           </AssociationSet>
+          <EntitySet Name="Drivers" EntityType="GIBDD.Drivers" />
+          <EntitySet Name="Dtp" EntityType="GIBDD.Dtp" />
+          <EntitySet Name="PlaceFines" EntityType="GIBDD.PlaceFines" />
+          <EntitySet Name="Transports" EntityType="GIBDD.Transports" />
           <AssociationSet Name="FK_Transports_ColorCars" Association="GIBDD.FK_Transports_ColorCars">
             <End Role="ColorCars" EntitySet="ColorCars" />
             <End Role="Transports" EntitySet="Transports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dtp_Drivers" Association="GIBDD.FK_Dtp_Drivers">
+            <End Role="Drivers" EntitySet="Drivers" />
+            <End Role="Dtp" EntitySet="Dtp" />
           </AssociationSet>
           <AssociationSet Name="FK_licence_Drivers" Association="GIBDD.FK_licence_Drivers">
             <End Role="Drivers" EntitySet="Drivers" />
@@ -345,6 +355,14 @@
           <AssociationSet Name="FK_Transports_Drivers" Association="GIBDD.FK_Transports_Drivers">
             <End Role="Drivers" EntitySet="Drivers" />
             <End Role="Transports" EntitySet="Transports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dtp_licence" Association="GIBDD.FK_Dtp_licence">
+            <End Role="licence" EntitySet="licence" />
+            <End Role="Dtp" EntitySet="Dtp" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dtp_PlaceFines" Association="GIBDD.FK_Dtp_PlaceFines">
+            <End Role="PlaceFines" EntitySet="PlaceFines" />
+            <End Role="Dtp" EntitySet="Dtp" />
           </AssociationSet>
           <AssociationSet Name="FK_Transports_EngineType" Association="GIBDD.FK_Transports_EngineType">
             <End Role="EngineType" EntitySet="EngineType" />
@@ -358,21 +376,7 @@
             <End Role="TypeOfDrive" EntitySet="TypeOfDrive" />
             <End Role="Transports" EntitySet="Transports" />
           </AssociationSet>
-          <EntitySet Name="Dtp" EntityType="GIBDD.Dtp" />
-          <EntitySet Name="PlaceFines" EntityType="GIBDD.PlaceFines" />
-          <AssociationSet Name="FK_Dtp_Drivers" Association="GIBDD.FK_Dtp_Drivers">
-            <End Role="Drivers" EntitySet="Drivers" />
-            <End Role="Dtp" EntitySet="Dtp" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Dtp_licence" Association="GIBDD.FK_Dtp_licence">
-            <End Role="licence" EntitySet="licence" />
-            <End Role="Dtp" EntitySet="Dtp" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Dtp_PlaceFines" Association="GIBDD.FK_Dtp_PlaceFines">
-            <End Role="PlaceFines" EntitySet="PlaceFines" />
-            <End Role="Dtp" EntitySet="Dtp" />
-          </AssociationSet>
-        </EntityContainer>
+          </EntityContainer>
         <EntityType Name="CodeSubj">
           <Key>
             <PropertyRef Name="IdCode" />
@@ -394,29 +398,6 @@
           <Property Name="ColorNameEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Transports" Relationship="GIBDD.FK_Transports_ColorCars" FromRole="ColorCars" ToRole="Transports" />
         </EntityType>
-        <EntityType Name="Drivers">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="lastname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="middlename" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="passportSerial" Type="Int32" Nullable="false" />
-          <Property Name="passportNumber" Type="Int32" Nullable="false" />
-          <Property Name="postCode" Type="Int32" Nullable="false" />
-          <Property Name="address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="addressLife" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="company" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="jobname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="photo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="descreption" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="licence" Relationship="GIBDD.FK_licence_Drivers" FromRole="Drivers" ToRole="licence" />
-          <NavigationProperty Name="Transports" Relationship="GIBDD.FK_Transports_Drivers" FromRole="Drivers" ToRole="Transports" />
-          <NavigationProperty Name="Dtp" Relationship="GIBDD.FK_Dtp_Drivers" FromRole="Drivers" ToRole="Dtp" />
-        </EntityType>
         <EntityType Name="EngineType">
           <Key>
             <PropertyRef Name="Id_Engine" />
@@ -435,11 +416,11 @@
           <Property Name="expireDate" Type="DateTime" Precision="0" />
           <Property Name="categories" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="licenceNum" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Drivers" Relationship="GIBDD.FK_licence_Drivers" FromRole="licence" ToRole="Drivers" />
           <Property Name="Vidano" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Drivers" Relationship="GIBDD.FK_licence_Drivers" FromRole="licence" ToRole="Drivers" />
           <NavigationProperty Name="Dtp" Relationship="GIBDD.FK_Dtp_licence" FromRole="licence" ToRole="Dtp" />
         </EntityType>
         <EntityType Name="Manufacture">
@@ -471,24 +452,6 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <EntityType Name="Transports">
-          <Key>
-            <PropertyRef Name="VIN" />
-          </Key>
-          <Property Name="VIN" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ID_Drivers" Type="Int32" />
-          <Property Name="Manuf" Type="Int32" />
-          <Property Name="Color" Type="Int32" />
-          <Property Name="Engine_Type" Type="Int32" Nullable="false" />
-          <Property Name="TypeOfDrive" Type="Int32" />
-          <Property Name="Year" Type="Int32" />
-          <Property Name="Weight" Type="Int32" />
-          <NavigationProperty Name="ColorCars" Relationship="GIBDD.FK_Transports_ColorCars" FromRole="Transports" ToRole="ColorCars" />
-          <NavigationProperty Name="Drivers" Relationship="GIBDD.FK_Transports_Drivers" FromRole="Transports" ToRole="Drivers" />
-          <NavigationProperty Name="EngineType" Relationship="GIBDD.FK_Transports_EngineType" FromRole="Transports" ToRole="EngineType" />
-          <NavigationProperty Name="Manufacture" Relationship="GIBDD.FK_Transports_Manufacture" FromRole="Transports" ToRole="Manufacture" />
-          <NavigationProperty Name="TypeOfDrive1" Relationship="GIBDD.FK_Transports_TypeOfDrive" FromRole="Transports" ToRole="TypeOfDrive" />
-        </EntityType>
         <EntityType Name="TypeOfDrive">
           <Key>
             <PropertyRef Name="IDTypeOfDrive" />
@@ -509,6 +472,83 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Drivers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="lastname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="middlename" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="passportSerial" Type="Int32" Nullable="false" />
+          <Property Name="passportNumber" Type="Int32" Nullable="false" />
+          <Property Name="postCode" Type="Int32" Nullable="false" />
+          <Property Name="address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="addressLife" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="company" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="jobname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="photo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="descreption" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Dtp" Relationship="GIBDD.FK_Dtp_Drivers" FromRole="Drivers" ToRole="Dtp" />
+          <NavigationProperty Name="licence" Relationship="GIBDD.FK_licence_Drivers" FromRole="Drivers" ToRole="licence" />
+          <NavigationProperty Name="Transports" Relationship="GIBDD.FK_Transports_Drivers" FromRole="Drivers" ToRole="Transports" />
+        </EntityType>
+        <EntityType Name="Dtp">
+          <Key>
+            <PropertyRef Name="Date" />
+            <PropertyRef Name="Time" />
+            <PropertyRef Name="IdDrivers" />
+            <PropertyRef Name="Licence" />
+            <PropertyRef Name="NumberREG" />
+          </Key>
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Time" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="IdFines" Type="Int32" Nullable="false" />
+          <Property Name="IdDrivers" Type="Int32" Nullable="false" />
+          <Property Name="Licence" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GosNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NumberREG" Type="Int32" Nullable="false" />
+          <Property Name="OtherObjects" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Victim" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Photo1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Photo2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Photo3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Drivers" Relationship="GIBDD.FK_Dtp_Drivers" FromRole="Dtp" ToRole="Drivers" />
+          <NavigationProperty Name="licence1" Relationship="GIBDD.FK_Dtp_licence" FromRole="Dtp" ToRole="licence" />
+          <NavigationProperty Name="PlaceFines" Relationship="GIBDD.FK_Dtp_PlaceFines" FromRole="Dtp" ToRole="PlaceFines" />
+        </EntityType>
+        <EntityType Name="PlaceFines">
+          <Key>
+            <PropertyRef Name="IdPlace" />
+          </Key>
+          <Property Name="IdPlace" Type="Int32" Nullable="false" />
+          <Property Name="Street" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="House" Type="Int32" />
+          <Property Name="RowRoad" Type="Int32" />
+          <Property Name="LineMove" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Dtp" Relationship="GIBDD.FK_Dtp_PlaceFines" FromRole="PlaceFines" ToRole="Dtp" />
+        </EntityType>
+        <EntityType Name="Transports">
+          <Key>
+            <PropertyRef Name="VIN" />
+          </Key>
+          <Property Name="VIN" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID_Drivers" Type="Int32" />
+          <Property Name="Manuf" Type="Int32" />
+          <Property Name="Color" Type="Int32" />
+          <Property Name="Engine_Type" Type="Int32" Nullable="false" />
+          <Property Name="TypeOfDrive" Type="Int32" />
+          <Property Name="Year" Type="Int32" />
+          <Property Name="Weight" Type="Int32" />
+          <NavigationProperty Name="ColorCars" Relationship="GIBDD.FK_Transports_ColorCars" FromRole="Transports" ToRole="ColorCars" />
+          <NavigationProperty Name="Drivers" Relationship="GIBDD.FK_Transports_Drivers" FromRole="Transports" ToRole="Drivers" />
+          <NavigationProperty Name="EngineType" Relationship="GIBDD.FK_Transports_EngineType" FromRole="Transports" ToRole="EngineType" />
+          <NavigationProperty Name="Manufacture" Relationship="GIBDD.FK_Transports_Manufacture" FromRole="Transports" ToRole="Manufacture" />
+          <NavigationProperty Name="TypeOfDrive1" Relationship="GIBDD.FK_Transports_TypeOfDrive" FromRole="Transports" ToRole="TypeOfDrive" />
+        </EntityType>
         <Association Name="FK_Transports_ColorCars">
           <End Type="GIBDD.ColorCars" Role="ColorCars" Multiplicity="0..1" />
           <End Type="GIBDD.Transports" Role="Transports" Multiplicity="*" />
@@ -518,6 +558,18 @@
             </Principal>
             <Dependent Role="Transports">
               <PropertyRef Name="Color" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dtp_Drivers">
+          <End Type="GIBDD.Drivers" Role="Drivers" Multiplicity="1" />
+          <End Type="GIBDD.Dtp" Role="Dtp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drivers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Dtp">
+              <PropertyRef Name="IdDrivers" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -542,6 +594,30 @@
             </Principal>
             <Dependent Role="Transports">
               <PropertyRef Name="ID_Drivers" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dtp_licence">
+          <End Type="GIBDD.licence" Role="licence" Multiplicity="1" />
+          <End Type="GIBDD.Dtp" Role="Dtp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="licence">
+              <PropertyRef Name="licenceNum" />
+            </Principal>
+            <Dependent Role="Dtp">
+              <PropertyRef Name="Licence" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dtp_PlaceFines">
+          <End Type="GIBDD.PlaceFines" Role="PlaceFines" Multiplicity="1" />
+          <End Type="GIBDD.Dtp" Role="Dtp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlaceFines">
+              <PropertyRef Name="IdPlace" />
+            </Principal>
+            <Dependent Role="Dtp">
+              <PropertyRef Name="IdFines" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -581,74 +657,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="Dtp">
-          <Key>
-            <PropertyRef Name="Date" />
-          </Key>
-          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Time" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="IdFines" Type="Int32" />
-          <Property Name="IdDrivers" Type="Int32" />
-          <Property Name="Licence" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="VinNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="NumberREG" Type="Int32" />
-          <Property Name="OtherObjects" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Victim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Photo1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Photo2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Photo3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Drivers" Relationship="GIBDD.FK_Dtp_Drivers" FromRole="Dtp" ToRole="Drivers" />
-          <NavigationProperty Name="licence1" Relationship="GIBDD.FK_Dtp_licence" FromRole="Dtp" ToRole="licence" />
-          <NavigationProperty Name="PlaceFines" Relationship="GIBDD.FK_Dtp_PlaceFines" FromRole="Dtp" ToRole="PlaceFines" />
-        </EntityType>
-        <EntityType Name="PlaceFines">
-          <Key>
-            <PropertyRef Name="IdPlace" />
-          </Key>
-          <Property Name="IdPlace" Type="Int32" Nullable="false" />
-          <Property Name="Street" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="House" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="RowRoad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="LineMove" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Dtp" Relationship="GIBDD.FK_Dtp_PlaceFines" FromRole="PlaceFines" ToRole="Dtp" />
-        </EntityType>
-        <Association Name="FK_Dtp_Drivers">
-          <End Type="GIBDD.Drivers" Role="Drivers" Multiplicity="0..1" />
-          <End Type="GIBDD.Dtp" Role="Dtp" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Drivers">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Dtp">
-              <PropertyRef Name="IdDrivers" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Dtp_licence">
-          <End Type="GIBDD.licence" Role="licence" Multiplicity="0..1" />
-          <End Type="GIBDD.Dtp" Role="Dtp" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="licence">
-              <PropertyRef Name="licenceNum" />
-            </Principal>
-            <Dependent Role="Dtp">
-              <PropertyRef Name="Licence" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Dtp_PlaceFines">
-          <End Type="GIBDD.PlaceFines" Role="PlaceFines" Multiplicity="0..1" />
-          <End Type="GIBDD.Dtp" Role="Dtp" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PlaceFines">
-              <PropertyRef Name="IdPlace" />
-            </Principal>
-            <Dependent Role="Dtp">
-              <PropertyRef Name="IdFines" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -675,27 +683,6 @@
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="ColorCode" ColumnName="ColorCode" />
                 <ScalarProperty Name="ColorNum" ColumnName="ColorNum" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Drivers">
-            <EntityTypeMapping TypeName="GIBDD.Drivers">
-              <MappingFragment StoreEntitySet="Drivers">
-                <ScalarProperty Name="descreption" ColumnName="descreption" />
-                <ScalarProperty Name="photo" ColumnName="photo" />
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="phone" ColumnName="phone" />
-                <ScalarProperty Name="jobname" ColumnName="jobname" />
-                <ScalarProperty Name="company" ColumnName="company" />
-                <ScalarProperty Name="addressLife" ColumnName="addressLife" />
-                <ScalarProperty Name="address" ColumnName="address" />
-                <ScalarProperty Name="postCode" ColumnName="postCode" />
-                <ScalarProperty Name="passportNumber" ColumnName="passportNumber" />
-                <ScalarProperty Name="passportSerial" ColumnName="passportSerial" />
-                <ScalarProperty Name="middlename" ColumnName="middlename" />
-                <ScalarProperty Name="lastname" ColumnName="lastname" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -753,25 +740,32 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Transports">
-            <EntityTypeMapping TypeName="GIBDD.Transports">
-              <MappingFragment StoreEntitySet="Transports">
-                <ScalarProperty Name="Weight" ColumnName="Weight" />
-                <ScalarProperty Name="Year" ColumnName="Year" />
-                <ScalarProperty Name="TypeOfDrive" ColumnName="TypeOfDrive" />
-                <ScalarProperty Name="Engine_Type" ColumnName="Engine_Type" />
-                <ScalarProperty Name="Color" ColumnName="Color" />
-                <ScalarProperty Name="Manuf" ColumnName="Manuf" />
-                <ScalarProperty Name="ID_Drivers" ColumnName="ID_Drivers" />
-                <ScalarProperty Name="VIN" ColumnName="VIN" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="TypeOfDrive">
             <EntityTypeMapping TypeName="GIBDD.TypeOfDrive">
               <MappingFragment StoreEntitySet="TypeOfDrive">
                 <ScalarProperty Name="TypeDrive" ColumnName="TypeDrive" />
                 <ScalarProperty Name="IDTypeOfDrive" ColumnName="IDTypeOfDrive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Drivers">
+            <EntityTypeMapping TypeName="GIBDD.Drivers">
+              <MappingFragment StoreEntitySet="Drivers">
+                <ScalarProperty Name="descreption" ColumnName="descreption" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="jobname" ColumnName="jobname" />
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="addressLife" ColumnName="addressLife" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="postCode" ColumnName="postCode" />
+                <ScalarProperty Name="passportNumber" ColumnName="passportNumber" />
+                <ScalarProperty Name="passportSerial" ColumnName="passportSerial" />
+                <ScalarProperty Name="middlename" ColumnName="middlename" />
+                <ScalarProperty Name="lastname" ColumnName="lastname" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -785,7 +779,7 @@
                 <ScalarProperty Name="Victim" ColumnName="Victim" />
                 <ScalarProperty Name="OtherObjects" ColumnName="OtherObjects" />
                 <ScalarProperty Name="NumberREG" ColumnName="NumberREG" />
-                <ScalarProperty Name="VinNumber" ColumnName="VinNumber" />
+                <ScalarProperty Name="GosNumber" ColumnName="GosNumber" />
                 <ScalarProperty Name="Licence" ColumnName="Licence" />
                 <ScalarProperty Name="IdDrivers" ColumnName="IdDrivers" />
                 <ScalarProperty Name="IdFines" ColumnName="IdFines" />
@@ -802,6 +796,20 @@
                 <ScalarProperty Name="House" ColumnName="House" />
                 <ScalarProperty Name="Street" ColumnName="Street" />
                 <ScalarProperty Name="IdPlace" ColumnName="IdPlace" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transports">
+            <EntityTypeMapping TypeName="GIBDD.Transports">
+              <MappingFragment StoreEntitySet="Transports">
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="TypeOfDrive" ColumnName="TypeOfDrive" />
+                <ScalarProperty Name="Engine_Type" ColumnName="Engine_Type" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Manuf" ColumnName="Manuf" />
+                <ScalarProperty Name="ID_Drivers" ColumnName="ID_Drivers" />
+                <ScalarProperty Name="VIN" ColumnName="VIN" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

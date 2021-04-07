@@ -44,27 +44,6 @@
             <TextBox HorizontalAlignment="Left" Height="23" Margin="478,224,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
             <TextBox x:Name="TBDriver" x:FieldModifier="public"  HorizontalAlignment="Left" Height="23" Margin="477,250,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
             <Button x:Name="ButtonAdd" Content="Добавить" HorizontalAlignment="Left" Margin="305,291,0,0" VerticalAlignment="Top" Width="127" Height="36" Click="ButtonAdd_Click"/>
-            <Button x:Name="ButtonBack" Content="Назад" HorizontalAlignment="Left" Margin="475,291,0,0" VerticalAlignment="Top" Width="100" Height="35" Click="ButtonBack_Click"/>
-            <ComboBox x:Name="CBMark" x:FieldModifier="public" HorizontalAlignment="Left" Margin="152,47,0,0" VerticalAlignment="Top" Width="120">
-                <ComboBoxItem Content="Cadillac"/>
-                <ComboBoxItem Content="BMW"/>
-                <ComboBoxItem Content="Kia"/>
-                <ComboBoxItem Content="Volkswagen"/>
-            </ComboBox>
-            <ComboBox x:Name="CBModel" x:FieldModifier="public" HorizontalAlignment="Left" Margin="153,79,0,0" VerticalAlignment="Top" Width="120">
-                <ComboBoxItem Content="1-Series"/>
-                <ComboBoxItem Content="2-Series"/>
-                <ComboBoxItem Content="New Class 1602, 1802, 2002"/>
-                <ComboBoxItem Content="3-Series"/>
-                <ComboBoxItem Content="3-Series, M3"/>
-                <ComboBoxItem Content="4-Series, M4"/>
-                <ComboBoxItem Content="New Class 1500, 1600, 1800, 2000"/>
-                <ComboBoxItem Content="5-Series"/>
-                <ComboBoxItem Content="5-Series, M5"/>
-                <ComboBoxItem Content="X7"/>
-                <ComboBoxItem Content="Cimarron"/>
-                <ComboBoxItem/>
-            </ComboBox>
             <ComboBox x:Name="CBCategory" HorizontalAlignment="Left" Margin="150,157,0,0" VerticalAlignment="Top" Width="120">
                 <ComboBoxItem Content="A"/>
                 <ComboBoxItem Content="B"/>
@@ -74,6 +53,8 @@
                 <ComboBoxItem Content="Tb"/>
                 <ComboBoxItem/>
             </ComboBox>
+            <TextBox x:Name="TBMark" HorizontalAlignment="Left" Height="23" Margin="153,43,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="TBModel" HorizontalAlignment="Left" Height="23" Margin="152,77,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="76" Margin="1,1,0,0" VerticalAlignment="Top" Width="790" Background="#FFE0A9AF">
             <Label Content="Добавить ТС" HorizontalAlignment="Left" Margin="263,5,0,0" VerticalAlignment="Top" Height="64" Width="315" FontSize="36"/>

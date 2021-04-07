@@ -17,9 +17,9 @@ namespace WpfApp2
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Drivers()
         {
+            this.Dtp = new HashSet<Dtp>();
             this.licence = new HashSet<licence>();
             this.Transports = new HashSet<Transports>();
-            this.Dtp = new HashSet<Dtp>();
         }
     
         public int Id { get; set; }
@@ -39,10 +39,10 @@ namespace WpfApp2
         public string descreption { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Dtp> Dtp { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<licence> licence { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Transports> Transports { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Dtp> Dtp { get; set; }
     }
 }

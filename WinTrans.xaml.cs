@@ -27,8 +27,9 @@ namespace WpfApp2
 
         private void ButtonAdd_Click(object sender, RoutedEventArgs e)
         {
-            AddTrans addTrans = new AddTrans();
-            addTrans.Show();
+            AddTrans1 addTran = new AddTrans1();
+            addTran.Show();
+            this.Close();
         }
     }
 }

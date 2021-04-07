@@ -30,7 +30,7 @@ namespace WpfApp2
             {
                Transports trans = new Transports();
                 trans.VIN = TBVIn.Text;
-                trans.Manuf = int.Parse(CBMark.Text);
+                trans.Manuf = int.Parse(TBMark.Text);
                 trans. Color = int.Parse(TBNumberColor.Text);
                 trans.Engine_Type = int.Parse(TBTypeEngine.Text);
                 trans.TypeOfDrive = int.Parse(TBTypePrivod.Text);
@@ -44,6 +44,11 @@ namespace WpfApp2
             Voditeli NewGIBDD = new Voditeli();
             NewGIBDD.Show();
             this.Hide();
+        }
+
+        private void ButtonBack_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

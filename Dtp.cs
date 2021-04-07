@@ -15,14 +15,14 @@ namespace WpfApp2
     public partial class Dtp
     {
         public System.DateTime Date { get; set; }
-        public string Time { get; set; }
-        public Nullable<int> IdFines { get; set; }
-        public Nullable<int> IdDrivers { get; set; }
+        public System.TimeSpan Time { get; set; }
+        public int IdFines { get; set; }
+        public int IdDrivers { get; set; }
         public string Licence { get; set; }
-        public string VinNumber { get; set; }
-        public Nullable<int> NumberREG { get; set; }
+        public string GosNumber { get; set; }
+        public int NumberREG { get; set; }
         public string OtherObjects { get; set; }
-        public string Victim { get; set; }
+        public Nullable<int> Victim { get; set; }
         public string Description { get; set; }
         public string Photo1 { get; set; }
         public string Photo2 { get; set; }
