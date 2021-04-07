@@ -25,10 +25,34 @@ namespace WpfApp2
             InitializeComponent();
             
         }
+        public string path;
         public int id;
         private void ButtonSave_Click(object sender, RoutedEventArgs e)
         {
+            if (path != null)
+            {
+                using (GIBDDContainer db = new GIBDDContainer())
+                {
+                    Drivers drivers = db.Drivers.Find(id);
+                    licence licence = db.licence.FirstOrDefault(p => p.idDriver == id);
+                    drivers.name = TBName.Text;
+                    drivers.lastname = TBSurname.Text;
+                    drivers.middlename = TBMiddleName.Text;
+                    licence.licenceDate = DateTime.Parse(TBDateIssue.Text);
+                    licence.expireDate = DateTime.Parse(TBDateExpire.Text);
+                    licence.categories = TBCategory.Text;
+                    drivers.addressLife = TBLifeAdress.Text;
+                    db.SaveChanges();
 
+                    Voditeli voditeli = new Voditeli();
+                    voditeli.Show();
+                    this.Hide();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Информация изменена");
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

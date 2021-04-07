@@ -31,23 +31,25 @@ namespace WpfApp2
 
         private void ButtonSave_Click(object sender, RoutedEventArgs e)
         {
-            licence lic = new licence();
+            
             using (GIBDDContainer db = new GIBDDContainer())
-            {  
-                
-                lic.licenceDate = DateTime.Parse(TBDateIssue.Text);
-                lic.idDriver = id;
-                lic.expireDate = DateTime.Parse(TBDateExpire.Text);
-                lic.categories = TBCategory.Text;
-                lic.licenceNum = TBNumberCard.Text;                       
-                db.licence.Add(lic);
+            {
+                Drivers drivers = new Drivers();
+                licence licence = new licence();
+                drivers.name = TBName.Text;
+                drivers.lastname = TBSurname.Text;
+                drivers.middlename = TBMiddleName.Text;
+                licence.licenceDate = Issue.SelectedDate;
+                licence.expireDate = Date.SelectedDate;
+                licence.categories = TBCategory.Text;
+                drivers.addressLife = TBLifeAdress.Text;
                 db.SaveChanges();
 
 
             }
-                    CardDriver card = new CardDriver();
-                    card.Show();
-                    this.Hide();
+             Voditeli vod = new Voditeli();
+             vod.Show();
+             this.Hide();
                 
                                       
         }

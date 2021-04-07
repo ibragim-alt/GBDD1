@@ -19,7 +19,6 @@
             <Label Content="Дата выдачи" HorizontalAlignment="Left" Margin="25,111,0,0" VerticalAlignment="Top"/>
             <TextBox x:Name="TBDateIssue" HorizontalAlignment="Left" Height="23" Margin="350,295,0,0" x:FieldModifier="public" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
             <Label Content="Дата истечения срока" HorizontalAlignment="Left" Margin="350,45,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="TBDateExpire" HorizontalAlignment="Left" Height="23" Margin="484,46,0,0" x:FieldModifier="public" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.657,0.238"/>
             <Label Content="Орган выдавший" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,144,0,0"/>
             <TextBox x:Name="TBOrgan" HorizontalAlignment="Left" Height="23" Margin="231,145,0,0" x:FieldModifier="public" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
             <Label Content="Номер удостоверения" HorizontalAlignment="Left" Margin="24,172,0,0" VerticalAlignment="Top"/>
@@ -36,7 +35,8 @@
                 <ComboBoxItem Content="D"/>
                 <ComboBoxItem Content="D1E"/>
             </ComboBox>
-            <DatePicker HorizontalAlignment="Left" Margin="235,114,0,0" VerticalAlignment="Top" Width="114"/>
+            <DatePicker x:Name="Issue" HorizontalAlignment="Left" Margin="235,114,0,0" VerticalAlignment="Top" Width="114"/>
+            <DatePicker x:Name="Date" HorizontalAlignment="Left" Margin="486,48,0,0" VerticalAlignment="Top" Width="116"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="86" Margin="3,2,0,0" VerticalAlignment="Top" Width="785" Background="#FFE0A9AF">
             <Label Content="Новое водительское удостоверение" HorizontalAlignment="Left" Margin="145,10,0,0" VerticalAlignment="Top" Height="72" Width="526" FontSize="24"/>
