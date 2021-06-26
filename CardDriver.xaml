@@ -5,37 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
-        Title="CardDriver" Height="450" Width="800">
+        Title="CardDriver" Height="450" Width="1200">
     <Grid>
-        <Grid HorizontalAlignment="Left" Height="86" Margin="3,2,0,0" VerticalAlignment="Top" Width="785" Background="#FFE0A9AF">
-            <Label Content="Водительское удостоверение" HorizontalAlignment="Left" Margin="145,10,0,0" VerticalAlignment="Top" Height="72" Width="526" FontSize="36"/>
+        <Grid HorizontalAlignment="Left" Height="92" Margin="2,-4,0,0" VerticalAlignment="Top" Width="1189" Background="#FFE0A9AF">
+            <Label Content="Водительское удостоверение" HorizontalAlignment="Left" Margin="341,9,0,0" VerticalAlignment="Top" Height="72" Width="526" FontSize="36"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="328" Margin="4,88,0,0" VerticalAlignment="Top" Width="787" Background="#FFB5D5CA">
-            <Label Content="Фамилия" HorizontalAlignment="Left" Margin="25,14,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="TBSurname"  HorizontalAlignment="Left" Height="23" Margin="229,11,0,0" x:FieldModifier="public" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-            <Label Content="Имя" HorizontalAlignment="Left" Margin="23,48,0,0"  VerticalAlignment="Top"/>
-            <TextBox x:Name="TBName"  HorizontalAlignment="Left" Height="23" Margin="228,46,0,0" x:FieldModifier="public" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-            <Label Content="Отчество" HorizontalAlignment="Left" Margin="354,10,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="TBMiddleName"  HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" x:FieldModifier="public" Text=""  VerticalAlignment="Top" Width="120" Margin="484,12,0,0"/>
-            <Label Content="Дата рождения, адрес проживания" HorizontalAlignment="Left" Margin="24,79,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="TBDate" HorizontalAlignment="Left" Height="23" Margin="230,79,0,0" x:FieldModifier="public" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-            <Label Content="Дата выдачи" HorizontalAlignment="Left" Margin="25,111,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="TBDateIssue" HorizontalAlignment="Left" Height="23" Margin="230,113,0,0" x:FieldModifier="public" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-            <Label Content="Дата истечения срока" HorizontalAlignment="Left" Margin="350,45,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="TBDateExpire" HorizontalAlignment="Left" Height="23" Margin="484,46,0,0" x:FieldModifier="public" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.657,0.238"/>
-            <Label Content="Орган выдавший" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,144,0,0"/>
-            <TextBox x:Name="TBOrgan" HorizontalAlignment="Left" Height="23" Margin="231,145,0,0" x:FieldModifier="public" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-            <Label Content="Номер удостоверения" HorizontalAlignment="Left" Margin="24,172,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="TBNumberCard" HorizontalAlignment="Left" Height="23" Margin="230,174,0,0" TextWrapping="Wrap" x:FieldModifier="public" Text="" VerticalAlignment="Top" Width="120"/>
-            <Label Content="Адрес проживания" HorizontalAlignment="Left" Margin="25,201,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="TBLifeAdress" HorizontalAlignment="Left" Height="23" Margin="232,202,0,0" TextWrapping="Wrap" x:FieldModifier="public" Text="" VerticalAlignment="Top" Width="120"/>
-            <Label Content="Категория ТС" HorizontalAlignment="Left" Margin="25,229,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="TBCategory" HorizontalAlignment="Left" Height="23" Margin="232,232,0,0" TextWrapping="Wrap" x:FieldModifier="public" Text="" VerticalAlignment="Top" Width="120"/>
-            <Button x:Name="ButtonSave" x:FieldModifier="public" Content="Сохранить" HorizontalAlignment="Left" Margin="36,272,0,0" VerticalAlignment="Top" Width="75" IsDefault="True" Click="ButtonSave_Click"/>
-            <DataGrid x:Name="DataGridCardDriver" x:FieldModifier="public"  HorizontalAlignment="Left" Height="208" Margin="360,77,0,0" VerticalAlignment="Top" Width="407"/>
-            <Button Content="Добавить" HorizontalAlignment="Left" Margin="134,271,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Grid HorizontalAlignment="Left" Height="332" Margin="2,88,0,-1" VerticalAlignment="Top" Width="1189" Background="#FFB5D5CA">
+            <Label Content="Фамилия" HorizontalAlignment="Left" Margin="22,64,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="TBSurname"  HorizontalAlignment="Left" Height="22" Margin="224,66,0,0" x:FieldModifier="public" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Имя" HorizontalAlignment="Left" Margin="20,91,0,0"  VerticalAlignment="Top"/>
+            <TextBox x:Name="TBName"  HorizontalAlignment="Left" Height="22" Margin="226,92,0,0" x:FieldModifier="public" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="119"/>
+            <Label Content="Дата выдачи" HorizontalAlignment="Left" Margin="19,164,0,0" VerticalAlignment="Top"/>
+            <Label Content="Дата истечения срока" HorizontalAlignment="Left" Margin="20,129,0,0" VerticalAlignment="Top"/>
+            <Label Content="Кем выдано" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16,236,0,0"/>
+            <TextBox x:Name="TBOrgan" HorizontalAlignment="Left" Height="23" Margin="226,240,0,0" x:FieldModifier="public" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Серия и Номер" HorizontalAlignment="Left" Margin="15,202,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="TBNumberCard" HorizontalAlignment="Left" Height="24" Margin="225,202,0,0" TextWrapping="Wrap" x:FieldModifier="public" Text="" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Категория ТС" HorizontalAlignment="Left" Margin="19,265,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="TBCategory" HorizontalAlignment="Left" Height="23" Margin="225,270,0,0" TextWrapping="Wrap" x:FieldModifier="public" Text="" VerticalAlignment="Top" Width="120"/>
+            <DataGrid x:Name="DataGridCardDriver" x:FieldModifier="public"  HorizontalAlignment="Left" Height="307" Margin="357,9,0,0" VerticalAlignment="Top" Width="500"/>
+            <Button x:Name="ButtonAdd" Content="Добавить" HorizontalAlignment="Left" Margin="11,302,0,0" VerticalAlignment="Top" Width="75" Click="ButtonAdd_Click"/>
+            <Button x:Name="ButtonChange" Content="Изменить" HorizontalAlignment="Left" Margin="104,302,0,0" VerticalAlignment="Top" Width="75" Click="ButtonChange_Click"/>
+            <Button x:Name="ButtonPhoto"  Content="Фото" HorizontalAlignment="Left" Margin="188,302,0,0" VerticalAlignment="Top" Width="75" Click="ButtonPhoto_Click"/>
+            <Label Content="IDDriver" HorizontalAlignment="Left" Margin="20,34,0,0" VerticalAlignment="Top"/>
+            <DatePicker x:Name="DPlicenceDate" HorizontalAlignment="Left" Margin="226,163,0,0" VerticalAlignment="Top"/>
+            <DatePicker x:Name="DPexpireDate" HorizontalAlignment="Left" Margin="230,124,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="TBDriver" HorizontalAlignment="Left" Height="22" Margin="225,34,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Фото" HorizontalAlignment="Left" Margin="873,11,0,0" VerticalAlignment="Top" Height="23" Width="52"/>
+            <Image x:Name="Imagephoto" HorizontalAlignment="Left" Height="182" Margin="876,36,0,0" VerticalAlignment="Top" Width="178"/>
+            <Button  x:Name="ButtonBack" Content="Назад" HorizontalAlignment="Left" Margin="270,300,0,0" VerticalAlignment="Top" Width="75" Height="20" Click="ButtonBack_Click"/>
         </Grid>
-        <Image Margin="5,4,706,333" Source="gibdd_logo (1).png" Stretch="Fill"/>
+        <Image Margin="5,4,1104,333" Source="gibdd_logo (1).png" Stretch="Fill"/>
 
     </Grid>
 </Window>

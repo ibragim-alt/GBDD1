@@ -11,6 +11,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data.Entity;
+using Microsoft.Win32;
+using System.Reflection;
+using System.IO;
 
 namespace WpfApp2
 {
@@ -22,6 +26,20 @@ namespace WpfApp2
         public WinDTP()
         {
             InitializeComponent();
+            FillTable();
+        }
+
+        private void FillTable()
+        {
+            using (GIBDDContainer db = new GIBDDContainer())
+            {
+                var pro = (from p in db.Dtp                                                    
+                           select new {Data = p.Date + " " + p.Time.ToString().Substring(0, 5),
+                               Victims = p.Victim,
+                               Participant = db.Dtp.Where(b => b.IdFines == p.IdFines).Count(),
+                               Classification = p.Description  }).ToList().Distinct();
+                DGdtp.ItemsSource = pro;
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

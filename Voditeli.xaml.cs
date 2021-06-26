@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data.Entity;
+using Microsoft.Win32;
+using System.Reflection;
+using System.IO;
 
 namespace WpfApp2
 {
@@ -23,11 +26,16 @@ namespace WpfApp2
         List<Drivers> drivers = new List<Drivers>();
         List<Transports> transports = new List<Transports>();
         List<Dtp> dtps = new List<Dtp>();
+        List<licence> licences1 = new List<licence>();
         public Voditeli()
         {
             InitializeComponent();
             FillTable();
         }
+
+        public string path;
+
+        public string path2;
 
         private void FillTable()
         {
@@ -108,6 +116,7 @@ namespace WpfApp2
 
         private void ButtonCarta_Click(object sender, RoutedEventArgs e)
         {
+            CardDriver card = new CardDriver();
             
                 if (DataGridVod.Items.Count > 0)
                 {
@@ -116,121 +125,66 @@ namespace WpfApp2
                     {
                         int id = int.Parse((DataGridVod.SelectedCells[0].Column.GetCellContent(index) as TextBlock).Text);
 
-                        CardDriver card = new CardDriver();
-                        //MakeVod make = new MakeVod();
-
                         using (GIBDDContainer db = new GIBDDContainer())
-
                         {
-
                             Drivers drivers = db.Drivers.Find(id);
-                            licence licence = db.licence.FirstOrDefault(p=>p.idDriver==id);
-
-                            card.TBName.Text = drivers.name;
+                            var licence = db.licence.First(p=>p.idDriver==id);
+                            card.TBNumberCard.Text = licence.licenceNum;
                             card.TBSurname.Text = drivers.lastname;
-                            card.TBMiddleName.Text = drivers.middlename;
+                            card.TBName.Text = drivers.name;                            
+                            card.DPexpireDate.SelectedDate = licence.expireDate;
+                            card.DPlicenceDate.SelectedDate = licence.licenceDate;
+                            card.TBCategory.Text = licence.categories;                           
                             
-                            card.TBDateIssue.Text = licence.licenceDate.ToString();
-                            card.TBDateExpire.Text = licence.expireDate.ToString();
-                            card.TBCategory.Text = licence.categories;
-                            card.TBLifeAdress.Text = drivers.addressLife;
-
-                            var licences = db.licence.Where(p => p.idDriver == id).ToList();
-                            card.DataGridCardDriver.ItemsSource = licences;
-
-
-
-
-
-                            //MessageBox.Show(.ShowDialog().HasValue.ToString());
-                            if (!card.ShowDialog().HasValue) return;
-
-                            drivers.name = card.TBName.Text;
-                            drivers.lastname = card.TBSurname.Text;
-                            drivers.middlename = card.TBMiddleName.Text;
-                            licence.licenceDate = DateTime.Parse(card.TBDateIssue.Text);
-                            licence.expireDate = DateTime.Parse(card.TBDateExpire.Text);
-                            licence.categories = card.TBCategory.Text;
-                            drivers.addressLife = card.TBLifeAdress.Text;
-
-
-
-                            db.SaveChanges();
-                            FillTable();
-
+                            card.TBDriver.Text = licence.idDriver.ToString();
+                            string path = drivers.photo;
+                            string path2 = Assembly.GetExecutingAssembly().Location.ToString();
+                            string photo = path2.Substring(0, path2.LastIndexOf("\\")) + "\\photo\\" + path.Substring(path.LastIndexOf("\\") + 1);
+                            card.Imagephoto.Source = new BitmapImage(new Uri(photo));
+                        card.path = photo;
+                        var licences = db.licence.Where(p => p.idDriver == id).ToList();
+                        card.DataGridCardDriver.ItemsSource = licences; 
                         }
                     }
+                card.Show();
+                this.Hide();
 
-                }
+            }
             
         }
 
         private void ButtonTS_Click(object sender, RoutedEventArgs e)
         {
-            var index = DataGridVod.SelectedItem;
-            WinTrans winTrans = new WinTrans();
-            if (index ==null)
             {
-                winTrans.Show();
-                this.Hide();
                 using (GIBDDContainer db = new GIBDDContainer())
                 {
-                    foreach (Transports t in db.Transports)
-                        transports.Add(t);
-                    winTrans.DGTrans.ItemsSource = db.Transports.Local.ToBindingList();
+                    AddTrans addTrans = new AddTrans();
+                    var transport = db.Transports.Join(db.Manufacture, p => p.Manuf, c => c.ID_manuf, (p, c) => new { VIN = p.VIN, ID_Drivers = p.ID_Drivers, Manuf = c.Name, Year = p.Year, Weight = p.Weight, Color = p.Color, EngineType = p.Engine_Type, TypeOfDrive = p.TypeOfDrive }).ToList();
+                    addTrans.DGTS.ItemsSource = transport;
+
+                    addTrans.Show();
+                    this.Hide();
                 }
+
             }
-            else 
-            {
-              
-                int id = int.Parse((DataGridVod.SelectedCells[0].Column.GetCellContent(index) as TextBlock).Text);
-               
-                using (GIBDDContainer db = new GIBDDContainer())
-                {
-                    var transport = db.Transports.Where(p => p.ID_Drivers == id).ToList();
-                    
-                    winTrans.DGTrans.ItemsSource = transport;
-                      winTrans.Show();
-                   
-                this.Hide();
-                }
-            }
-            
 
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            var index = DataGridVod.SelectedItem;
-            WinDTP win = new WinDTP();
-            if (index == null)
-            {
-                win.Show();
-                this.Hide();
-                using (GIBDDContainer db = new GIBDDContainer())
-                {
-                    foreach (Dtp t in db.Dtp)
-                        dtps.Add(t);
-                    win.DGdtp.ItemsSource = db.Dtp.Local.ToBindingList();
-                }
-            }
-            else
-            {
+            WinDTP winDTP = new WinDTP();
+            winDTP.Show();
+            this.Hide();
 
-                int id = int.Parse((DataGridVod.SelectedCells[0].Column.GetCellContent(index) as TextBlock).Text);
-
-                using (GIBDDContainer db = new GIBDDContainer())
-                {
-                    var dtp = db.Dtp.Where(p => p.IdDrivers == id).ToList();
-
-                    win.DGdtp.ItemsSource = dtp;
-                    win.Show();
-
-                    this.Hide();
-                }
-            }
         }
 
-        
+       
+
+        private void peredTS_Click(object sender, RoutedEventArgs e)
+        {
+            PeredTS peredTS = new PeredTS();
+            peredTS.Show();
+            this.Hide();
+        }
     }
 }

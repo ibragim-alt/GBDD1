@@ -23,6 +23,8 @@ namespace WpfApp2
     /// </summary>
     public partial class AddDTP : Window
     {
+        List<Drivers> driver = new List<Drivers>();
+        
         public AddDTP()
         {
             InitializeComponent();
@@ -31,9 +33,29 @@ namespace WpfApp2
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            AddMember addMember = new AddMember();
-            addMember.Show();
-            this.Close();
+            if (TBAdd.Text.Split().Length ==3)
+            {
+                string[] owner = TBAdd.Text.Split();
+                string firstname = owner[1];
+                string lastname = owner[0];
+                string middlename = owner[2];
+
+                using (GIBDDContainer db = new GIBDDContainer())
+                {
+                    Drivers drivers = db.Drivers.FirstOrDefault(c => c.name == firstname && c.lastname == lastname && c.middlename == middlename);
+                    if (drivers != null)
+                    {
+                        licence licence = db.licence.FirstOrDefault(p => p.idDriver == drivers.Id);
+                        driver.Add(new Drivers { lastname = owner[0], middlename = owner[2], name = owner[1] });
+                        LBAdd.Items.Add(TBAdd.Text+", Лицензия: "+ licence.licenceNum);
+                        TBAdd.Clear();
+
+                    }
+                    else { MessageBox.Show("ФИО не правильно");
+                        return;
+                    }
+                }
+            }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

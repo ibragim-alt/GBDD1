@@ -33,67 +33,35 @@ namespace WpfApp2
 
         private void ButtonAdd_Click(object sender, RoutedEventArgs e)
         {
+            Class1 class1 = new Class1();
             using (GIBDDContainer db = new GIBDDContainer())
             {
-                if (TBDriver.Text.Length !=0)
-                {
-                    string[] fols = TBDriver.Text.Split();
-                    string firstname = fols[1];
-                    string lastname = fols[0];
-                    string middlename = fols[2];
-                    Class1 class1 = new Class1();
-                    Drivers drivers1 = db.Drivers.FirstOrDefault(p => p.name == firstname && p.lastname == lastname && p.middlename == middlename);
-                    if(drivers1 !=null)
-                    { if (class1.CheckVIN(TBVIn.Text) == true)
-                        {
-                            if (TBVIn.Text.Length == 17 && CBMark.Text.Length != 0 && TBNumberColor.Text.Length != 0 && TBTypeEngine.Text.Length != 0 && TBTypeTs.Text.Length != 0 && CBModel.Text.Length != 0 && TBdateAuto.Text.Length != 0 && TBWeight.Text.Length != 0)
-                            {
-                                Transports tran = new Transports();
-                                Manufacture manufacture = db.Manufacture.FirstOrDefault(c => c.Name == CBMark.Text);
-                                tran.Manuf = manufacture.ID_manuf;
-                                ColorCars color = db.ColorCars.FirstOrDefault(c => c.ColorName == TBNumberColor.Text);
-                                tran.Color = color.ColorNum;
-                                EngineType engine = db.EngineType.FirstOrDefault(c => c.NameRu == TBTypeEngine.Text);
-                                tran.Engine_Type = engine.Id_Engine;
-                                tran.ID_Drivers = drivers1.Id;
-                                Transports trans = db.Transports.FirstOrDefault(c => c.VIN == TBVIn.Text);
-                                tran.VIN = trans.VIN;
-                                tran.Weight = int.Parse(TBWeight.Text);
-                                tran.Year = int.Parse(TBdateAuto.Text);
-                                TypeOfDrive typeOfDrive = db.TypeOfDrive.FirstOrDefault(c => c.TypeDrive == TBTypeTs.Text);
-                                tran.TypeOfDrive = typeOfDrive.IDTypeOfDrive;
 
-                                db.Transports.Add(tran);
-                                db.SaveChanges();
-                                WinTrans winTrans = new WinTrans();
-                                winTrans.Show();
-                                this.Close();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Не все данные введены");
-                            }
-                        }
-                       
-                    }
-                    else
-                    {
-                        MessageBox.Show("Водитель не найден");
-                        AddVoditel addVoditel = new AddVoditel();
-                        addVoditel.TextBoxSurname.Text = lastname;
+                
+                if (class1.CheckVIN(TBVIn.Text) == true)
+                { 
+                    Transports tran = new Transports();
+                    tran.VIN = TBVIn.Text;
+                    tran.ID_Drivers = int.Parse(TBDriver.Text);
+                    tran.Manuf = int.Parse(TBMark.Text);
+                    tran.Color = int.Parse(TBNumberColor.Text);
+                    tran.Engine_Type = int.Parse(TBTypeEngine.Text);
+                    tran.TypeOfDrive = int.Parse(TBTypePrivod.Text);
+                    tran.Year = int.Parse(TBdateAuto.Text);
+                    tran.Weight = int.Parse(TBWeight.Text);
 
-                        addVoditel.Show();
-
-                    }
-
+                    db.Transports.Add(tran);
+                    db.SaveChanges();
+                    MessageBox.Show("Транспортное средство добавлено");
+                    Voditeli vod = new Voditeli();
                 }
-                 else
-                        {
-                            MessageBox.Show("Введите владельца");
-                        }
-
+                else
+                {
+                    MessageBox.Show("VIN номер не правльный");
+                }
             }
-           
+
+
         }
 
         private void ButtonBack_Click(object sender, RoutedEventArgs e)
@@ -102,6 +70,49 @@ namespace WpfApp2
             voditeli.Show();
 
             this.Hide();
+        }
+
+        private void ButtonEnter_Click(object sender, RoutedEventArgs e)
+        {
+            if (DGTS.Items.Count > 0)
+            {
+                var index = DGTS.SelectedItem;
+                string id = ((DGTS.SelectedCells[0].Column.GetCellContent(index) as TextBlock).Text);
+                using (GIBDDContainer db = new GIBDDContainer())
+                {
+                    Transports tran = db.Transports.Find(id);
+                    TBVIn.Text = tran.VIN;
+                    TBDriver.Text = tran.ID_Drivers.ToString();
+                    TBMark.Text = tran.Manuf.ToString();
+                    TBNumberColor.Text = tran.Color.ToString();
+                    TBTypeEngine.Text = tran.Engine_Type.ToString();
+                    TBTypePrivod.Text = tran.TypeOfDrive.ToString();
+                    TBdateAuto.Text = tran.Year.ToString();
+                    TBWeight.Text = tran.Weight.ToString();
+
+
+
+                }
+            }
+        }
+
+        private void ButtonChange_Click(object sender, RoutedEventArgs e)
+        {
+            using (GIBDDContainer db = new GIBDDContainer())
+            {
+                Transports tran = db.Transports.Find(TBVIn.Text);
+                tran.VIN = TBVIn.Text;
+                tran.ID_Drivers = int.Parse(TBDriver.Text);
+                tran.Manuf = int.Parse(TBMark.Text);
+                tran.Color = int.Parse(TBNumberColor.Text);
+                tran.Engine_Type = int.Parse(TBTypeEngine.Text);
+                tran.TypeOfDrive = int.Parse(TBTypePrivod.Text);
+                tran.Year = int.Parse(TBdateAuto.Text);
+                tran.Weight = int.Parse(TBWeight.Text);
+
+                db.SaveChanges();
+                MessageBox.Show("ТС изменено");
+            }
         }
     }            
             

@@ -11,25 +11,27 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using System.Data.Entity;
 
 namespace WpfApp2
 {
     /// <summary>
-    /// Логика взаимодействия для WinTrans.xaml
+    /// Логика взаимодействия для PeredTS.xaml
     /// </summary>
-    public partial class WinTrans : Window
+    public partial class PeredTS : Window
     {
-        public WinTrans()
+        public PeredTS()
         {
             InitializeComponent();
         }
 
-        private void ButtonAdd_Click(object sender, RoutedEventArgs e)
+        private void Buttonsave_Click(object sender, RoutedEventArgs e)
         {
-            AddTrans1 addTran = new AddTrans1();
-            addTran.Show();
-            this.Close();
+
+        }
+
+        private void ButtonBack_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

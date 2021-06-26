@@ -13,44 +13,40 @@
         <DatePicker HorizontalAlignment="Left" Margin="76,76,0,0" VerticalAlignment="Top"/>
         <Label Content="Время" HorizontalAlignment="Left" Margin="211,75,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="TBTime" HorizontalAlignment="Left" Height="23" Margin="273,77,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <DataGrid x:Name="DGAdd" HorizontalAlignment="Left" Height="60" Margin="37,118,0,0" VerticalAlignment="Top" Width="92">
-            <DataGrid.Columns>
-                <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Driver"/>
-                <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Licence"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <Button Content="Добавить" HorizontalAlignment="Left" Margin="142,119,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <Label Content="Место происшествия " HorizontalAlignment="Left" Margin="32,201,0,0" VerticalAlignment="Top" Width="126"/>
-        <Label Content="улица" HorizontalAlignment="Left" Margin="44,230,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TBStreet"  HorizontalAlignment="Left" Height="23" Margin="99,233,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="83"/>
-        <Label Content="дом" HorizontalAlignment="Left" Margin="45,263,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TBHome"  HorizontalAlignment="Left" Height="23" Margin="99,265,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="83"/>
-        <Label Content="ряд" HorizontalAlignment="Left" Margin="45,295,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="CBItems" HorizontalAlignment="Left" Margin="100,297,0,0" VerticalAlignment="Top" Width="81">
+        <Button Content="Добавить" HorizontalAlignment="Left" Margin="340,142,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Label Content="Место происшествия " HorizontalAlignment="Left" Margin="18,193,0,0" VerticalAlignment="Top" Width="126"/>
+        <Label Content="улица" HorizontalAlignment="Left" Margin="19,223,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TBStreet"  HorizontalAlignment="Left" Height="23" Margin="70,226,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="83"/>
+        <Label Content="дом" HorizontalAlignment="Left" Margin="19,259,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TBHome"  HorizontalAlignment="Left" Height="23" Margin="69,260,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="83"/>
+        <Label Content="ряд" HorizontalAlignment="Left" Margin="18,293,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="CBItems" HorizontalAlignment="Left" Margin="70,292,0,0" VerticalAlignment="Top" Width="81">
             <ComboBoxItem Content="1"/>
             <ComboBoxItem Content="2"/>
             <ComboBoxItem Content="3"/>
             <ComboBoxItem Content="4"/>
         </ComboBox>
 
-        <Label Content="поолоса" HorizontalAlignment="Left" Margin="43,327,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="CBLine" HorizontalAlignment="Left" Margin="100,330,0,0" VerticalAlignment="Top" Width="82">
+        <Label Content="полоса" HorizontalAlignment="Left" Margin="12,326,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="CBLine" HorizontalAlignment="Left" Margin="69,327,0,0" VerticalAlignment="Top" Width="82">
             <ComboBoxItem Content="1"/>
             <ComboBoxItem Content="2"/>
             <ComboBoxItem Content="3"/>
             <ComboBoxItem Content="4"/>
         </ComboBox>
-        <Label Content="Другие объекты" HorizontalAlignment="Left" Margin="273,118,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TBObject" HorizontalAlignment="Left" Height="64" Margin="275,148,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Жертвы" HorizontalAlignment="Left" Margin="275,223,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TBDeath" HorizontalAlignment="Left" Height="23" Margin="333,226,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="63"/>
-        <Label Content="Комментарии" HorizontalAlignment="Left" Margin="281,275,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TBNote" HorizontalAlignment="Left" Height="57" Margin="276,300,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Image x:Name="ImagePhoto" HorizontalAlignment="Left" Height="100" Margin="410,77,0,0" VerticalAlignment="Top" Width="100"/>
-        <Image x:Name="ImagePhoto1" HorizontalAlignment="Left" Height="100" Margin="537,75,0,0" VerticalAlignment="Top" Width="100"/>
-        <Image x:Name="ImagePhoto2" HorizontalAlignment="Left" Height="100" Margin="666,75,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button Content="Загрузить" HorizontalAlignment="Left" Margin="426,193,0,0" VerticalAlignment="Top" Width="76" Height="34" Click="Button_Click_1"/>
-        <Button Content="Загрузить" HorizontalAlignment="Left" Margin="551,192,0,0" VerticalAlignment="Top" Width="75" Height="37" Click="Button_Click_2"/>
-        <Button Content="Загрузить" HorizontalAlignment="Left" Margin="672,191,0,0" VerticalAlignment="Top" Width="83" Height="37" Click="Button_Click_3"/>
+        <Label Content="Другие объекты" HorizontalAlignment="Left" Margin="195,197,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TBObject" HorizontalAlignment="Left" Height="64" Margin="202,225,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Жертвы" HorizontalAlignment="Left" Margin="200,321,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TBDeath" HorizontalAlignment="Left" Height="23" Margin="263,323,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="63"/>
+        <Label Content="Комментарии" HorizontalAlignment="Left" Margin="355,251,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TBNote" HorizontalAlignment="Left" Height="57" Margin="360,290,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Image x:Name="ImagePhoto" HorizontalAlignment="Left" Height="100" Margin="450,77,0,0" VerticalAlignment="Top" Width="101"/>
+        <Image x:Name="ImagePhoto1" HorizontalAlignment="Left" Height="100" Margin="559,68,0,0" VerticalAlignment="Top" Width="101"/>
+        <Image x:Name="ImagePhoto2" HorizontalAlignment="Left" Height="100" Margin="680,67,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button Content="Загрузить" HorizontalAlignment="Left" Margin="469,194,0,0" VerticalAlignment="Top" Width="76" Height="34" Click="Button_Click_1"/>
+        <Button Content="Загрузить" HorizontalAlignment="Left" Margin="570,192,0,0" VerticalAlignment="Top" Width="75" Height="37" Click="Button_Click_2"/>
+        <Button Content="Загрузить" HorizontalAlignment="Left" Margin="694,191,0,0" VerticalAlignment="Top" Width="83" Height="37" Click="Button_Click_3"/>
+        <TextBox x:Name="TBAdd" HorizontalAlignment="Left" Height="23" Margin="274,115,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="166"/>
+        <ListBox x:Name="LBAdd" HorizontalAlignment="Left" Height="68" Margin="11,112,0,0" VerticalAlignment="Top" Width="256"/>
     </Grid>
 </Window>

@@ -8,77 +8,52 @@
         Title="AddTrans" Height="450" Width="800">
     <Grid>
         <Grid HorizontalAlignment="Left" Height="76" Margin="1,1,0,0" VerticalAlignment="Top" Width="790" Background="#FFE0A9AF">
-            <Label Content="Изменить ТС" HorizontalAlignment="Left" Margin="263,5,0,0" VerticalAlignment="Top" Height="64" Width="315" FontSize="36"/>
+            <Label Content=" Транспортное средство" HorizontalAlignment="Left" Margin="207,7,0,0" VerticalAlignment="Top" Height="64" Width="417" FontSize="36"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="341" Margin="1,77,0,0" VerticalAlignment="Top" Width="789" Background="#FFB5D5CA">
-            <Label Content="VIN номер автомобиля*" HorizontalAlignment="Left" Margin="12,9,0,0" VerticalAlignment="Top"/>
-            <Label Content="Марка*" HorizontalAlignment="Left" Margin="14,44,0,0" VerticalAlignment="Top"/>
-            <Label Content="Модель*" HorizontalAlignment="Left" Margin="8,76,0,0" VerticalAlignment="Top"/>
-            <Label Content="Тип ТС*" HorizontalAlignment="Left" Margin="8,114,0,0" VerticalAlignment="Top"/>
-            <Label Content="Категория ТС*" HorizontalAlignment="Left" Margin="13,155,0,0" VerticalAlignment="Top"/>
-            <Label Content="Год выпуска*" HorizontalAlignment="Left" Margin="16,198,0,0" VerticalAlignment="Top"/>
-            <Label Content="Номер двигателя" HorizontalAlignment="Left" Margin="16,227,0,0" VerticalAlignment="Top"/>
-            <Label Content="Модель двигателя" HorizontalAlignment="Left" Margin="11,265,0,0" VerticalAlignment="Top"/>
-            <Label Content="Год двигателя" HorizontalAlignment="Left" Margin="14,295,0,0" VerticalAlignment="Top"/>
-            <Label Content="Номер цвета*" HorizontalAlignment="Left" Margin="291,11,0,0" VerticalAlignment="Top"/>
-            <Label Content="Мощность двигателя в кВт" HorizontalAlignment="Left" Margin="290,40,0,0" VerticalAlignment="Top"/>
-            <Label Content="Мощность двигателя в Л.С" HorizontalAlignment="Left" Margin="289,67,0,0" VerticalAlignment="Top"/>
-            <Label Content="Максимальная нагрузка(кг)" HorizontalAlignment="Left" Margin="289,94,0,0" VerticalAlignment="Top"/>
-            <Label Content="Вес автомобиля*" HorizontalAlignment="Left" Margin="289,118,0,0" VerticalAlignment="Top"/>
-            <Label Content="Тип двигателя* " HorizontalAlignment="Left" Margin="288,142,0,0" VerticalAlignment="Top"/>
-            <Label Content="Вес автомобиля(кг)*" HorizontalAlignment="Left" Margin="289,164,0,0" VerticalAlignment="Top"/>
-            <Label Content="Тип привода*" HorizontalAlignment="Left" Margin="289,197,0,0" VerticalAlignment="Top"/>
-            <Label Content="Комментарии" HorizontalAlignment="Left" Margin="291,221,0,0" VerticalAlignment="Top"/>
-            <Label Content="Владелец" HorizontalAlignment="Left" Margin="288,246,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="TBVIn"  x:FieldModifier="public" HorizontalAlignment="Left" Height="23" Margin="153,12,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="TBTypeTs"  HorizontalAlignment="Left" Height="23" Margin="149,118,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="TBdateAuto"  HorizontalAlignment="Left" Height="23" Margin="149,196,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="TBNumberEngine"  HorizontalAlignment="Left" Height="23" Margin="149,228,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="TBModelEngine" HorizontalAlignment="Left" Height="23" Margin="147,265,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="TBDateEngine" HorizontalAlignment="Left" Height="23" Margin="145,301,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="TBNumberColor"  HorizontalAlignment="Left" Height="23" Margin="472,11,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-            <TextBox  HorizontalAlignment="Left" Height="23" Margin="473,40,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="475,70,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="476,97,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="TBWeight"  HorizontalAlignment="Left" Height="23" Margin="478,122,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="TBTypeEngine"  HorizontalAlignment="Left" Height="23" Margin="476,146,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="TBWeightLbs" HorizontalAlignment="Left" Height="23" Margin="475,171,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="TBTypePrivod"  HorizontalAlignment="Left" Height="23" Margin="479,197,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="478,224,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="TBDriver"  HorizontalAlignment="Left" Height="23" Margin="477,250,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-            <Button x:Name="ButtonAdd" Content="Добавить" HorizontalAlignment="Left" Margin="305,291,0,0" VerticalAlignment="Top" Width="127" Height="36" Click="ButtonAdd_Click"/>
-            <Button x:Name="ButtonBack" Content="Назад" HorizontalAlignment="Left" Margin="475,291,0,0" VerticalAlignment="Top" Width="100" Height="35" Click="ButtonBack_Click"/>
-            <ComboBox x:Name="CBMark" HorizontalAlignment="Left" Margin="152,47,0,0" VerticalAlignment="Top" Width="120">
-                <ComboBoxItem Content="Cadillac"/>
-                <ComboBoxItem Content="BMW"/>
-                <ComboBoxItem Content="Kia"/>
-                <ComboBoxItem Content="Volkswagen"/>
-            </ComboBox>
-            <ComboBox x:Name="CBModel"  HorizontalAlignment="Left" Margin="153,79,0,0" VerticalAlignment="Top" Width="120">
-                <ComboBoxItem Content="1-Series"/>
-                <ComboBoxItem Content="2-Series"/>
-                <ComboBoxItem Content="New Class 1602, 1802, 2002"/>
-                <ComboBoxItem Content="3-Series"/>
-                <ComboBoxItem Content="3-Series, M3"/>
-                <ComboBoxItem Content="4-Series, M4"/>
-                <ComboBoxItem Content="New Class 1500, 1600, 1800, 2000"/>
-                <ComboBoxItem Content="5-Series"/>
-                <ComboBoxItem Content="5-Series, M5"/>
-                <ComboBoxItem Content="X7"/>
-                <ComboBoxItem Content="Cimarron"/>
-                <ComboBoxItem/>
-            </ComboBox>
-            <ComboBox x:Name="CBCategory" HorizontalAlignment="Left" Margin="150,157,0,0" VerticalAlignment="Top" Width="120">
-                <ComboBoxItem Content="A"/>
-                <ComboBoxItem Content="B"/>
-                <ComboBoxItem Content="B, A"/>
-                <ComboBoxItem Content="D, C"/>
-                <ComboBoxItem Content="D1, D1E"/>
-                <ComboBoxItem Content="Tb"/>
-                <ComboBoxItem/>
-            </ComboBox>
+            <Label Content="VIN*" HorizontalAlignment="Left" Margin="4,2,0,0" VerticalAlignment="Top"/>
+            <Label Content="Марка*" HorizontalAlignment="Left" Margin="3,41,0,0" VerticalAlignment="Top"/>
+            <Label Content="Модель*" HorizontalAlignment="Left" Margin="3,79,0,0" VerticalAlignment="Top"/>
+            <Label Content="Тип ТС*" HorizontalAlignment="Left" Margin="4,114,0,0" VerticalAlignment="Top"/>
+            <Label Content="Категория ТС*" HorizontalAlignment="Left" Margin="3,155,0,0" VerticalAlignment="Top"/>
+            <Label Content="Год выпуска*" HorizontalAlignment="Left" Margin="4,198,0,0" VerticalAlignment="Top"/>
+            <Label Content="Номер двигателя" HorizontalAlignment="Left" Margin="2,232,0,0" VerticalAlignment="Top"/>
+            <Label Content="Модель двигателя" HorizontalAlignment="Left" Margin="0,266,0,0" VerticalAlignment="Top"/>
+            <Label Content="Год двигателя" HorizontalAlignment="Left" Margin="3,300,0,0" VerticalAlignment="Top"/>
+            <Label Content="Номер цвета*" HorizontalAlignment="Left" Margin="234,4,0,0" VerticalAlignment="Top"/>
+            <Label Content="Мощность двигателя в кВт" HorizontalAlignment="Left" Margin="234,43,0,0" VerticalAlignment="Top"/>
+            <Label Content="Мощность двигателя в Л.С" HorizontalAlignment="Left" Margin="233,82,0,0" VerticalAlignment="Top"/>
+            <Label Content="Максимальная нагрузка(кг)" HorizontalAlignment="Left" Margin="230,116,0,0" VerticalAlignment="Top"/>
+            <Label Content="Вес автомобиля*" HorizontalAlignment="Left" Margin="235,196,0,0" VerticalAlignment="Top"/>
+            <Label Content="Тип двигателя* " HorizontalAlignment="Left" Margin="230,155,0,0" VerticalAlignment="Top"/>
+            <Label Content="Тип привода*" HorizontalAlignment="Left" Margin="233,234,0,0" VerticalAlignment="Top"/>
+            <Label Content="Комментарии" HorizontalAlignment="Left" Margin="236,264,0,0" VerticalAlignment="Top"/>
+            <Label Content="Владелец" HorizontalAlignment="Left" Margin="235,300,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="TBVIn"   x:FieldModifier="public" HorizontalAlignment="Left" Height="23" Margin="111,6,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="TBTypeTs"  HorizontalAlignment="Left" Height="23" Margin="111,117,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="TBdateAuto"  HorizontalAlignment="Left" Height="23" Margin="111,199,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="TBNumberEngine"  HorizontalAlignment="Left" Height="23" Margin="111,236,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="TBModelEngine" HorizontalAlignment="Left" Height="23" Margin="111,268,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="TBDateEngine" HorizontalAlignment="Left" Height="23" Margin="111,302,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="TBNumberColor"  HorizontalAlignment="Left" Height="23" Margin="390,7,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox  HorizontalAlignment="Left" Height="23" Margin="390,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="390,83,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="390,119,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="TBWeight"  HorizontalAlignment="Left" Height="23" Margin="391,198,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="TBTypeEngine"  HorizontalAlignment="Left" Height="23" Margin="390,157,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="TBTypePrivod"  HorizontalAlignment="Left" Height="23" Margin="390,236,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="390,271,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="TBDriver"  HorizontalAlignment="Left" Height="23" Margin="390,305,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <Button x:Name="ButtonAdd" Content="Добавить" HorizontalAlignment="Left" Margin="521,269,0,0" VerticalAlignment="Top" Width="127" Height="20" Click="ButtonAdd_Click"/>
+            <Button x:Name="ButtonBack" Content="Назад" HorizontalAlignment="Left" Margin="662,267,0,0" VerticalAlignment="Top" Width="100" Height="19" Click="ButtonBack_Click"/>
+            <TextBox x:Name="TBModel" HorizontalAlignment="Left" Height="23" Margin="111,83,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="TBCategory" HorizontalAlignment="Left" Height="23" Margin="111,157,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <DataGrid x:Name="DGTS" HorizontalAlignment="Left" Height="249" Margin="517,5,0,0" VerticalAlignment="Top" Width="266"/>
+            <Button x:Name="ButtonChange" Content="Изменить" HorizontalAlignment="Left" Margin="522,293,0,0" VerticalAlignment="Top" Width="125" Click="ButtonChange_Click"/>
         </Grid>
         <Image Margin="4,4,717,344" Source="gibdd_logo (1).png" Stretch="Fill"/>
+        <TextBox x:Name="TBMark" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="111,121,0,0"/>
+        <Button x:Name="ButtonEnter" Content="Вывод" HorizontalAlignment="Left" VerticalAlignment="Top" Width="97" Margin="664,369,0,0" Click="ButtonEnter_Click"/>
 
     </Grid>
 </Window>

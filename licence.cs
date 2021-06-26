@@ -20,14 +20,12 @@ namespace WpfApp2
             this.Dtp = new HashSet<Dtp>();
         }
     
-        public int idDriver { get; set; }
+        public Nullable<int> idDriver { get; set; }
         public Nullable<System.DateTime> licenceDate { get; set; }
         public Nullable<System.DateTime> expireDate { get; set; }
         public string categories { get; set; }
         public string licenceNum { get; set; }
         public string Vidano { get; set; }
-        public string Surname { get; set; }
-        public string Name { get; set; }
         public string City { get; set; }
     
         public virtual Drivers Drivers { get; set; }

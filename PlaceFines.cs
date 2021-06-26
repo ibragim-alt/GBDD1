@@ -22,8 +22,8 @@ namespace WpfApp2
     
         public int IdPlace { get; set; }
         public string Street { get; set; }
-        public Nullable<int> House { get; set; }
-        public Nullable<int> RowRoad { get; set; }
+        public string House { get; set; }
+        public string RowRoad { get; set; }
         public string LineMove { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

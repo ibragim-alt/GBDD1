@@ -76,17 +76,11 @@
     <Compile Include="AddTrans.xaml.cs">
       <DependentUpon>AddTrans.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AddTrans1.xaml.cs">
-      <DependentUpon>AddTrans1.xaml</DependentUpon>
-    </Compile>
     <Compile Include="AddVoditel.xaml.cs">
       <DependentUpon>AddVoditel.xaml</DependentUpon>
     </Compile>
     <Compile Include="CardDriver.xaml.cs">
       <DependentUpon>CardDriver.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="CardVod2.xaml.cs">
-      <DependentUpon>CardVod2.xaml</DependentUpon>
     </Compile>
     <Compile Include="CodeSubj.cs">
       <DependentUpon>GIBDD.tt</DependentUpon>
@@ -108,6 +102,9 @@
     </Compile>
     <Compile Include="Manufacture.cs">
       <DependentUpon>GIBDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PeredTS.xaml.cs">
+      <DependentUpon>PeredTS.xaml</DependentUpon>
     </Compile>
     <Compile Include="PlaceFines.cs">
       <DependentUpon>GIBDD.tt</DependentUpon>
@@ -148,9 +145,6 @@
     <Compile Include="Voditeli.xaml.cs">
       <DependentUpon>Voditeli.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WinTrans.xaml.cs">
-      <DependentUpon>WinTrans.xaml</DependentUpon>
-    </Compile>
     <Page Include="AddDTP.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -163,10 +157,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AddTrans1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="AddVoditel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -175,7 +165,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CardVod2.xaml">
+    <Page Include="PeredTS.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -200,10 +190,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Voditeli.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WinTrans.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
